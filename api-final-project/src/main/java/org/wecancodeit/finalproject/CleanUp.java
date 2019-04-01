@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class CleanUp {
@@ -14,14 +15,15 @@ public class CleanUp {
 	@GeneratedValue
 	private Long id;
 	private String location;
-	private Collection<Object> comments;
+	@OneToMany (mappedBy = "cleanUp")
+	private Collection<CleanUpComment> comments;
 
 	public CleanUp() {
 	}
 	
 	public CleanUp(String location) {
 		this.location = location;
-		this.comments = new ArrayList<Object>();
+		this.comments = new ArrayList<CleanUpComment>();
 	}
 
 	public Long getId() {
@@ -32,7 +34,7 @@ public class CleanUp {
 		return location;
 	}
 
-	public Collection<Object> getComments() {
+	public Collection<CleanUpComment> getComments() {
 		return comments;
 	}
 
