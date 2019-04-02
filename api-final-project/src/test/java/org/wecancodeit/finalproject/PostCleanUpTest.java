@@ -34,5 +34,39 @@ public class PostCleanUpTest {
 
 		assertThat(postCleanUpFromDatabase.getLocation(), is("location"));
 	}
+	
+	@Test
+	public void shouldBeAbleToIncreaseCountByOne() {
+		PostCleanUp postCleanUpTest = postCleanUpRepo
+				.save(new PostCleanUp("imageURL", "location", "caption"));
+		
+		entityManager.persist(postCleanUpTest);
+		entityManager.flush();
+		entityManager.clear();
+		
+		postCleanUpTest.increaseCount();
+		postCleanUpRepo.save(postCleanUpTest);
+		
+		PostCleanUp postCleanUpFromDatabase = postCleanUpRepo.findByLocation("location");
+		
+		assertThat(postCleanUpFromDatabase.getCount(), is(2));
+	}
+	
+	@Test
+	public void shouldBeAbleToDecreaseCountByOne() {
+		PostCleanUp postCleanUpTest = postCleanUpRepo
+				.save(new PostCleanUp("imageURL", "location", "caption"));
+		
+		entityManager.persist(postCleanUpTest);
+		entityManager.flush();
+		entityManager.clear();
+		
+		postCleanUpTest.decreaseCount();
+		postCleanUpRepo.save(postCleanUpTest);
+		
+		PostCleanUp postCleanUpFromDatabase = postCleanUpRepo.findByLocation("location");
+		
+		assertThat(postCleanUpFromDatabase.getCount(), is(0));
+	}
 
 }

@@ -5,8 +5,12 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class CleanUpComment extends Comment {
-	@ManyToOne CleanUp cleanUp;
+	
+	@ManyToOne 
+	private CleanUp cleanUp;
+	
 	public CleanUpComment() {}
+	
 	public CleanUpComment(String content, CleanUp cleanUp) {
 		super(content);
 		this.cleanUp = cleanUp;

@@ -1,9 +1,11 @@
 package org.wecancodeit.finalproject;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
+@Entity
 public class Comment {
 
 	@Id
@@ -28,7 +30,7 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		return "CleanUpComment [Id=" + Id + ", content=" + content + "]";
+		return "Comment [Id=" + Id + ", content=" + content + "]";
 	}
 
 }
