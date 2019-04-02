@@ -1,8 +1,6 @@
 package org.wecancodeit.finalproject;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collection;
 
 import javax.persistence.Entity;
 
@@ -17,7 +15,7 @@ public class PostCleanUp extends CleanUp {
 	String image;
 	String caption;
 	// Make ratings/points its own entity
-	Collection<Object> ratings;
+	private int count;
 
 	public PostCleanUp() {
 	}
@@ -27,7 +25,7 @@ public class PostCleanUp extends CleanUp {
 		this.postDate = LocalDateTime.now();
 		this.image = image;
 		this.caption = caption;
-		this.ratings = new ArrayList<Object>();
+		this.count = 1;
 	}
 
 	public LocalDateTime getPostDate() {
@@ -41,15 +39,24 @@ public class PostCleanUp extends CleanUp {
 	public String getCaption() {
 		return caption;
 	}
+	
+	public int getCount() {
+		return count;
+	}
 
-	public Collection<Object> getRatings() {
-		return ratings;
+	public void increaseCount() {
+		count++;
+	}
+	
+	public void decreaseCount() {
+		count--;
 	}
 
 	@Override
 	public String toString() {
-		return "id=" + this.getId() + ", postDate=" + postDate + ", location=" + this.getLocation() + ", image=" + image
-				+ ", caption=" + caption + ", ratings=" + ratings + ", comments=" + this.getComments();
+		return "PostCleanUp [postDate=" + postDate + ", image=" + image + ", caption=" + caption + ", count=" + count
+				+ ", getId()=" + getId() + ", getLocation()=" + getLocation() + ", getComments()=" + getComments()
+				+ "]";
 	}
 
 }
