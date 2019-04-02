@@ -1,12 +1,15 @@
-package org.wecancodeit.finalproject;
+package org.wecancodeit.finalproject.models;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class CleanUpComment extends Comment {
 	
 	@ManyToOne 
+	@JsonIgnore
 	private CleanUp cleanUp;
 	
 	public CleanUpComment() {}

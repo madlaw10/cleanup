@@ -1,4 +1,4 @@
-package org.wecancodeit.finalproject;
+package org.wecancodeit.finalproject.models;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -12,6 +12,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.wecancodeit.finalproject.models.PreCleanUp;
+import org.wecancodeit.finalproject.repositories.PreCleanUpRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @DataJpaTest

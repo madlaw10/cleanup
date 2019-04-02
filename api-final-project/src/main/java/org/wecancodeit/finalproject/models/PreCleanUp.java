@@ -1,8 +1,9 @@
-package org.wecancodeit.finalproject;
+package org.wecancodeit.finalproject.models;
 
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 
 @Entity
 public class PreCleanUp extends CleanUp {
@@ -10,6 +11,7 @@ public class PreCleanUp extends CleanUp {
 	// A user needs to be able to "join" this clean-up
 	
 	private LocalDateTime scheduledDate;
+	@Lob
 	private String description;
 	public PreCleanUp () {
 	}
