@@ -1,4 +1,4 @@
-package org.wecancodeit.finalproject;
+package org.wecancodeit.finalproject.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

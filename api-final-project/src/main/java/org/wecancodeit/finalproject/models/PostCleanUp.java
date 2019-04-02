@@ -1,8 +1,9 @@
-package org.wecancodeit.finalproject;
+package org.wecancodeit.finalproject.models;
 
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 
 @Entity
 public class PostCleanUp extends CleanUp {
@@ -12,7 +13,9 @@ public class PostCleanUp extends CleanUp {
 	LocalDateTime postDate;
 	// Q: Uploading and supporting local photo files
 	// Collection of images?
+	@Lob
 	String image;
+	@Lob
 	String caption;
 	// Make ratings/points its own entity
 	private int count;

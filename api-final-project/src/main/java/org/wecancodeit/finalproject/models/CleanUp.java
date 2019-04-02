@@ -1,4 +1,4 @@
-package org.wecancodeit.finalproject;
+package org.wecancodeit.finalproject.models;
 
 import java.util.ArrayList;
 import java.util.Collection;
