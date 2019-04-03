@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-class Map extends Component {
-  static defaultProps = {
+const defaultProps = {
     center: {
         lat: 40.008102799999996, 
         lng: -83.0344489
@@ -10,11 +9,12 @@ class Map extends Component {
         zoom: 8
     };
 
+class Map extends Component {
     render() {
         return (
             <GoogleMapReact
-                defaultCenter = {this.props.center}
-                defaultZoom = {this.props.zoom}
+                defaultCenter = {defaultProps.center}
+                defaultZoom = {defaultProps.zoom}
             ></GoogleMapReact>
         )
     }
