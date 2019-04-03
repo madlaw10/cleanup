@@ -1,0 +1,21 @@
+.footer {
+    position: fixed;
+    background-color: limegreen;
+    bottom: 0;
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 6%;
+    width: 100%;
+    text-align: center;
+}
+
+.footer__button {
+color: white;
+margin: 5px;
+}
+
+.material-icons {
+    font-size: 100px !important;
+}

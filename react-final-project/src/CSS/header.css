@@ -1,0 +1,36 @@
+.avatar__image {
+    border: 2px solid green;
+    border-radius: 360px;
+    height: 90%;
+    margin: 2%;
+    width: auto;
+}
+
+.header {
+    background-color: limegreen;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);;
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    justify-content: space-between;
+    position: fixed;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .mobile__menu__button {
+    color: white;
+    margin: 10px;
+  }
+  
+  .mobile__menu__button:hover {
+    text-shadow: 2px 2px 2px black;
+  }
+  
+  .material-icons {
+    font-size: 100px !important;
+  }
+  
+
+
