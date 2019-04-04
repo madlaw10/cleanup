@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/landingPage.css';
+import '../css/landingPage.css';
 import Map from './Map'
 
 

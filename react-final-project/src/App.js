@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import LandingPage from './Components/LandingPage'
-import PostCleanUps from './Components/PostCleanUps'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import LandingPage from './components/LandingPage'
+import PostCleanUps from './components/PostCleanUps'
+import api from './util/api'
 
 class App extends Component {
 
   constructor() {
     super()
     this.state = {
+      currentLocation: "/cleanups/postcleanups",
       postCleanUps: []
     }
   }
@@ -19,13 +21,10 @@ class App extends Component {
   }
 
   getPostCleanUps = () => {
-    fetch('/cleanups/postcleanups')
-    .then(res => res.json())
-    .then(data => {
+    api.getRequest(this.state.currentLocation, data => {
       this.setState({postCleanUps: data})
-    })
-    .catch(err => console.log(err))
-  }
+  })
+}
 
   render() {
     return (
