@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      currentLocation: "/cleanups/postcleanups",
+      currentLocation: "postcleanups",
       postCleanUps: []
     }
   }
@@ -21,17 +21,21 @@ class App extends Component {
   }
 
   getPostCleanUps = () => {
-    api.getRequest(this.state.currentLocation, data => {
-      this.setState({postCleanUps: data})
+    api.getRequest('/cleanups/postcleanups', postCleanUps => {
+      this.setState({postCleanUps})
   })
 }
+
+  updateCurrentLocation = (location) => {
+    this.setState({ currentLocation: location })
+  }
 
   render() {
     return (
       <div>
        <Header />
        <LandingPage />
-       <PostCleanUps postCleanUps={this.state.postCleanUps} />
+       {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} />}
        <Footer />
       </div>
     ) 
