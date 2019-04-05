@@ -9,17 +9,19 @@ export default (props) =>
                     <h3 className="postCleanUp__location">{props.postCleanUp.location} {props.postCleanUp.id}</h3>
                 </div>
                 <img className="postCleanUp__image" src={props.postCleanUp.image} alt="CleanUp Photo" />
-                <button class="postCleanUp-feed__button" type="button">
-                    <i class="material-icons-outlined">
-                    thumb_up
-                    </i>
-                </button>
-                <p className="postCleanUp__votes">{props.postCleanUp.count}</p>
-                <button class="postCleanUp-feed__button" type="button">
-                    <i class="material-icons-outlined">
-                    thumb_down
-                    </i>
-                </button>
+                <div className="postCleanUp__vote-container">
+                    <button class="postCleanUp-feed__button" type="button">
+                        <i class="material-icons-outlined postCleanUp-feed__button-icon-down">
+                        thumb_down
+                        </i>
+                    </button>
+                    <p className="postCleanUp__votes">{props.postCleanUp.count}</p>
+                    <button class="postCleanUp-feed__button" type="button">
+                        <i class="material-icons-outlined postCleanUp-feed__button-icon-up">
+                        thumb_up
+                        </i>
+                    </button>
+                </div>
                 <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
             </div>
         </div>

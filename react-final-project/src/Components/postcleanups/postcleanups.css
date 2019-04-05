@@ -37,18 +37,36 @@
     text-align: center;
 }
 
-
 .postCleanUp-feed__button {
     background: transparent;
     border: none;
 }
 
+.postCleanUp-feed__button-icon-down {
+    font-size: 50px;
+    padding: 10px;
+    margin-top: 13px;
+}
+
+.postCleanUp-feed__button-icon-up {
+    font-size: 50px;
+    padding: 10px;
+    margin-bottom: 13px;
+}
+
+.postCleanUp__vote-container {
+    display: flex;
+    padding: 10px;
+}
+
 .postCleanUp__votes {
     font-weight: bolder;
-    text-align: center;
+    font-size: 40px;
+    margin-top: 15px;
 }
 
 .postCleanUp__caption {
+    font-size: 30px;
     padding: 5px;
 }
 

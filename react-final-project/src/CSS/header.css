@@ -1,3 +1,4 @@
+
 .avatar__image {
   border-radius: 360px;
   box-shadow: 1px 1px 5px black;
@@ -30,8 +31,8 @@
   text-shadow: 2px 2px 2px black;
 }
 
-.material-icons {
-  font-size: 100px !important;
+.material-icons-outlined {
+  font-size: 100px;
 }
   
 
