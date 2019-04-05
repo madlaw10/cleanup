@@ -1,9 +1,18 @@
     
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  html {
-    font: 20px/1 sans-serif;
-  }
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+a {
+  text-decoration: none;
+}
