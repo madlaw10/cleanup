@@ -2,64 +2,76 @@
     margin-bottom: 60px;
     padding: 5px;
     position:relative;
-    top: 120px;
+    top: 185px;
 }
 
 .postCleanUp-feed-card {
-box-shadow: 2px 2px 5px black;
-padding: 10px;
-margin-bottom: 10px;
+    box-shadow: 2px 2px 5px black;
+    padding: 30px;
+    margin-bottom: 10px;
 }
 
-.container-feed-card__header {
-align-items: center;
-border-bottom: 1px solid gray;
-display: flex;
-padding: 2px;
+.postCleanUp__header {
+    align-items: center;
+    border-bottom: 1px solid gray;
+    display: flex;
+    padding: 30px;
 }
 
 .postCleanUp__image {
-height: auto;
-width: 100%;
+    height: auto;
+    width: 100%;
 }
 
-.container-feed-avatar__image {
-border-radius: 360px;
-box-shadow: 1px 1px 5px black;
-height: 25px;
-width: 25px;
+.postCleanUp__avatar {
+    border-radius: 360px;
+    box-shadow: 1px 1px 5px black;
+    height: 70px;
+    width: 70px;
 }
 
-.container-feed__heading {
-font-weight: bolder;
-padding: 10px;
-text-align: center;
-}
-
-.container-feed__date {
-padding-bottom: 10px;
+.postCleanUp__location {
+    font-size: 40px;
+    font-weight: bolder;
+    padding: 10px;
+    text-align: center;
 }
 
 .postCleanUp-feed__button {
-background: transparent;
-border: none;
+    background: transparent;
+    border: none;
 }
 
-.container-feed--rating {
-padding: 5px;
+.postCleanUp-feed__button-icon-down {
+    font-size: 50px;
+    padding: 10px;
+    margin-top: 13px;
+}
+
+.postCleanUp-feed__button-icon-up {
+    font-size: 50px;
+    padding: 10px;
+    margin-bottom: 13px;
+}
+
+.postCleanUp__vote-container {
+    display: flex;
+    padding: 10px;
 }
 
 .postCleanUp__votes {
-font-weight: bolder;
-text-align: center;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-top: 15px;
 }
 
 .postCleanUp__caption {
-padding: 5px;
+    font-size: 30px;
+    padding: 5px;
 }
 
-.container-feed__date {
-padding: 5px;
+.postCleanUp__date {
+ padding: 5px;
 }
 
 .hidden{
