@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default (props) =>
+export default (props) =>{
+    const postCleanUpId = props.postCleanUp.id 
+    return(
     <div className="postCleanUp-feed">
         <div className="postCleanUp-feed-card">
             <div className="postCleanUp">
@@ -23,8 +25,9 @@ export default (props) =>
                     </button>
                 </div>
                 <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
+                {props.currentLocation === "postcleanups" && <button className="postCleanUp-toggle__button" onClick={() => props.getPostCleanUp(postCleanUpId)}>View More</button>}
             </div>
         </div>
     </div>
-
-   
+    )
+} 

@@ -71,5 +71,9 @@
 }
 
 .postCleanUp__date {
-    padding: 5px;
+ padding: 5px;
+}
+
+.hidden{
+    display: none;
 }
