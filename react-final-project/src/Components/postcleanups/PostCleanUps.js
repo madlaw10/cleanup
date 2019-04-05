@@ -1,5 +1,5 @@
 import React from 'react'
-import PostCleanUp from '../PostCleanUp'
+import PostCleanUp from './PostCleanUp'
 import './postcleanups.css';
 
 export default (props) => {
