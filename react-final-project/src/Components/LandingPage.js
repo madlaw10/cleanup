@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/landingPage.css';
-import Map from './Map'
+import MapContainer from './MapContainer'
 
 
 export default function LandingPage() {
@@ -8,10 +8,9 @@ export default function LandingPage() {
 
     <div className="landing-page">
         <section className="map-container">
-            <Map />
+            <MapContainer />
         </section>
     </div>
     
     );
 }
-

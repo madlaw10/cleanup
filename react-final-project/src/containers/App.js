@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Footer from '../components/footer/Footer';
 import LandingPage from '../components/LandingPage'
-import PostCleanUps from '../components/PostCleanUps'
+import PostCleanUps from '../components/postcleanups/PostCleanUps'
 import api from '../util/api'
 
 class App extends Component {
@@ -11,8 +11,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      currentLocation: "postcleanups",
-      postCleanUps: []
+      postCleanUps: [],
+      currentLocation: 'postcleanups'
     }
   }
 
@@ -34,9 +34,9 @@ class App extends Component {
     return (
       <div>
        <Header />
-       <LandingPage />
+       <Footer updateCurrentLocation={this.updateCurrentLocation} />
        {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} />}
-       <Footer />
+       {this.state.currentLocation === "landingpage" && <LandingPage />}
       </div>
     ) 
   } 
