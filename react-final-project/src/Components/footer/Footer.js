@@ -1,0 +1,14 @@
+import React from 'react'
+import './footer.css'
+
+export default (props) => {
+    return (
+        <div className="footer">
+                <i onClick={() => props.updateCurrentLocation('precleanups')} className="material-icons footer__button">search</i>
+
+                <i onClick={() => props.updateCurrentLocation('landingpage')} className="material-icons footer__button">home</i>
+
+                <i onClick={() => props.updateCurrentLocation('postcleanups')} className="material-icons footer__button">history</i>
+        </div>
+    )
+}

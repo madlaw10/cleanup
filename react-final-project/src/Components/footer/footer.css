@@ -5,15 +5,16 @@
     box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 6%;
     width: 100%;
     text-align: center;
+    z-index: 999;
 }
 
 .footer__button {
-color: white;
-margin: 5px;
+    color: white;
+    margin: 5px;
 }
 
 .material-icons {
