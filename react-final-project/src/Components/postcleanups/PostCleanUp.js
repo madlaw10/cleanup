@@ -2,7 +2,7 @@ import React from 'react'
 
 export default (props) =>
     <div className="postCleanUp-feed">
-        <div class="postCleanUp-feed-card">
+        <div className="postCleanUp-feed-card">
             <div className="postCleanUp">
                 <div className="postCleanUp__header">
                     <img className ="postCleanUp__avatar" src="https://farm2.staticflickr.com/1723/42703297172_fd3e3933d6.jpg" />  
@@ -10,14 +10,14 @@ export default (props) =>
                 </div>
                 <img className="postCleanUp__image" src={props.postCleanUp.image} alt="CleanUp Photo" />
                 <div className="postCleanUp__vote-container">
-                    <button class="postCleanUp-feed__button" type="button">
-                        <i class="material-icons-outlined postCleanUp-feed__button-icon-down">
+                    <button className="postCleanUp-feed__button" type="button">
+                        <i className="material-icons-outlined postCleanUp-feed__button-icon-down">
                         thumb_down
                         </i>
                     </button>
                     <p className="postCleanUp__votes">{props.postCleanUp.count}</p>
-                    <button class="postCleanUp-feed__button" type="button">
-                        <i class="material-icons-outlined postCleanUp-feed__button-icon-up">
+                    <button className="postCleanUp-feed__button" type="button">
+                        <i className="material-icons-outlined postCleanUp-feed__button-icon-up">
                         thumb_up
                         </i>
                     </button>
