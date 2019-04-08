@@ -1,6 +1,7 @@
     
 body {
   box-sizing: border-box;
+  margin-bottom: 60px;
 }
 
 * {
@@ -15,4 +16,8 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.root {
+  padding-bottom: 60px;
 }
