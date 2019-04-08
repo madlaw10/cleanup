@@ -14,8 +14,8 @@ const mapStyles = {
           zoom={14}
           style={mapStyles}
           initialCenter={{
-           lat: -1.2884,
-           lng: 36.8233
+           lat: 39.9612,
+           lng: 82.9988
           }}
         />
       );
