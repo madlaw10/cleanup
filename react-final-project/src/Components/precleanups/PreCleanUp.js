@@ -1,4 +1,5 @@
 import React from 'react'
+import './precleanups.css'
 
 export default (props) => 
 <div className = "preCleanUp-feed">

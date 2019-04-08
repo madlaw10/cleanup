@@ -1,0 +1,41 @@
+.preCleanUp-feed {
+    margin-bottom: 60px;
+    padding: 5px;
+    position:relative;
+    top: 185px;
+}
+
+.preCleanUp-feed-card {
+    box-shadow: 2px 2px 5px black;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.preCleanUp__header {
+    align-items: center;
+    border-bottom: 1px solid gray;
+    display: flex;
+    padding: 30px;
+}
+
+.preCleanUp__image {
+    height: auto;
+    width: 100%;
+}
+
+.preCleanUp__location {
+    font-size: 40px;
+    font-weight: bolder;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.preCleanUp__description {
+    font-size: 30px;
+    padding: 5px;
+}
+
+.hidden{
+    display: none;
+}
