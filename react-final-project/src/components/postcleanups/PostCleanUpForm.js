@@ -10,6 +10,7 @@ class PostCleanUpForm extends Component {
             postCleanUpCaption: 'Write a caption for the Cleanup'
         };
 
+        this.baseState=this.state;
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -18,15 +19,17 @@ class PostCleanUpForm extends Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
+        
     
         this.setState({
           [name]: value
-        });
+          });
     }
     
     handleSubmit(event) {
-        this.addPostCleanUp(this.state.postCleanUpPhoto, this.state.postCleanUpLocation, this.state.postCleanUpCaption);
         event.preventDefault();
+        this.props.addPostCleanUp(this.state.postCleanUpPhoto, this.state.postCleanUpLocation, this.state.postCleanUpCaption);
+        this.setState(this.baseState);
     }
 
     render () {
