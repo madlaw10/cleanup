@@ -7,7 +7,7 @@ import PostCleanUps from '../components/postcleanups/PostCleanUps'
 import PostCleanUp from '../components/postcleanups/PostCleanUp'
 import PreCleanUps from '../components/precleanups/PreCleanUps'
 import api from '../util/api'
-import PreCleanUp from  '../components/precleanups/PreCleanUp'
+import PreCleanUp from '../components/precleanups/PreCleanUp'
 
 class App extends Component {
 
@@ -15,10 +15,10 @@ class App extends Component {
     super()
     this.state = {
       postCleanUps: [],
-      postCleanUp: 'postcleanup',
+      postCleanUp: {},
       preCleanUps: [],
       currentLocation: 'landingpage',
-      preCleanUp: 'precleanup'
+      preCleanUp: {}
     }
   }
 
@@ -29,49 +29,45 @@ class App extends Component {
 
   getPostCleanUps = () => {
     api.getRequest('/cleanups/postcleanups', postCleanUps => {
-      this.setState({postCleanUps})
-  })
-}
+      this.setState({ postCleanUps })
+    })
+  }
 
-getPostCleanUp = (postCleanUpId) => {
-  this.setState({ currentLocation: 'postcleanup' })
-  api.getRequest('/cleanups/postcleanups/'+ postCleanUpId, postCleanUp => {
-    this.setState({postCleanUp})
-})
-}
+  getPostCleanUp = (postCleanUpId) => {
+    api.getRequest('/cleanups/postcleanups/' + postCleanUpId, postCleanUp => {
+      this.setState({ postCleanUp, currentLocation: 'postcleanup' })
+    })
+  }
 
-getPreCleanUps = () => {
-  api.getRequest('/cleanups/precleanups', preCleanUps => {
-    this.setState({preCleanUps})
-})
-}
+  getPreCleanUps = () => {
+    api.getRequest('/cleanups/precleanups', preCleanUps => {
+      this.setState({ preCleanUps })
+    })
+  }
 
-getPreCleanUp = (preCleanUpId) => {
-  this.setState({ currentLocation: 'precleanup'})
-  api.getRequest('/cleanups/precleanups/' + preCleanUpId, preCleanUp => {
-    this.setState({preCleanUp})
-  })
-}
+  getPreCleanUp = (preCleanUpId) => {
+    api.getRequest('/cleanups/precleanups/' + preCleanUpId, preCleanUp => {
+      this.setState({ preCleanUp, currentLocation: 'precleanup' })
+    })
+  }
 
   updateCurrentLocation = (location) => {
     this.setState({ currentLocation: location })
   }
 
-
-
   render() {
     return (
       <div>
-       <Header />
-       <Footer updateCurrentLocation={this.updateCurrentLocation} />
-       {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation}/>}
-       {this.state.currentLocation === "postcleanup" && <PostCleanUp postCleanUp={this.state.postCleanUp} />}
-       {this.state.currentLocation === "precleanups" && <PreCleanUps preCleanUps={this.state.preCleanUps} getPreCleanUp={this.getPreCleanUp} currentLocation={this.state.currentLocation}/>}
-       {this.state.currentLocation === "precleanup" && <PreCleanUp preCleanUp={this.state.preCleanUp}/>}
-       {this.state.currentLocation === "landingpage" && <LandingPage />}
+        <Header />
+        <Footer updateCurrentLocation={this.updateCurrentLocation} />
+        {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} />}
+        {this.state.currentLocation === "postcleanup" && <PostCleanUp postCleanUp={this.state.postCleanUp} currentLocation={this.state.currentLocation}/>}
+        {this.state.currentLocation === "precleanups" && <PreCleanUps preCleanUps={this.state.preCleanUps} getPreCleanUp={this.getPreCleanUp} currentLocation={this.state.currentLocation} />}
+        {this.state.currentLocation === "precleanup" && <PreCleanUp preCleanUp={this.state.preCleanUp} />}
+        {this.state.currentLocation === "landingpage" && <LandingPage />}
       </div>
-    ) 
-  } 
+    )
+  }
 }
 
 export default App;

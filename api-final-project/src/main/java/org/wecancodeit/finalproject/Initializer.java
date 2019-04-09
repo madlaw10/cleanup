@@ -33,7 +33,7 @@ public class Initializer implements CommandLineRunner{
 		PostCleanUp cleanUpFour = postCleanUpRepo.save(new PostCleanUp("https://pbs.twimg.com/profile_images/933918958/cuw_logo_en_200x200_400x400.jpg", "locationFour", "captionFour"));
 		commentRepo.save(new CleanUpComment("contentZero", cleanUpZero));
 		commentRepo.save(new CleanUpComment("contentOne", cleanUpOne));
-		commentRepo.save(new CleanUpComment("contentTwo", cleanUpTwo));
+		commentRepo.save(new CleanUpComment("contentTwo", cleanUpOne));
 		commentRepo.save(new CleanUpComment("contentThree", cleanUpThree));
 		commentRepo.save(new CleanUpComment("contentFour", cleanUpFour));
 		
