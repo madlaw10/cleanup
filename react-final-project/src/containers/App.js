@@ -15,10 +15,10 @@ class App extends Component {
     super()
     this.state = {
       postCleanUps: [],
-      postCleanUp: 'postcleanup',
+      postCleanUp: {},
       preCleanUps: [],
       currentLocation: 'landingpage',
-      preCleanUp: 'precleanup'
+      preCleanUp: {}
     }
   }
 
