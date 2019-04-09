@@ -6,8 +6,8 @@ import LandingPage from '../components/LandingPage'
 import PostCleanUps from '../components/postcleanups/PostCleanUps'
 import PostCleanUp from '../components/postcleanups/PostCleanUp'
 import PreCleanUps from '../components/precleanups/PreCleanUps'
-import api from '../util/api'
 import PreCleanUp from '../components/precleanups/PreCleanUp'
+import api from '../util/api'
 
 class App extends Component {
 
@@ -15,10 +15,10 @@ class App extends Component {
     super()
     this.state = {
       postCleanUps: [],
-      postCleanUp: 'postcleanup',
+      postCleanUp: {},
       preCleanUps: [],
       currentLocation: 'landingpage',
-      preCleanUp: 'precleanup'
+      preCleanUp: {}
     }
   }
 
@@ -34,9 +34,8 @@ class App extends Component {
   }
 
   getPostCleanUp = (postCleanUpId) => {
-    this.setState({ currentLocation: 'postcleanup' })
     api.getRequest('/cleanups/postcleanups/' + postCleanUpId, postCleanUp => {
-      this.setState({ postCleanUp })
+      this.setState({ postCleanUp, currentLocation: 'postcleanup' })
     })
   }
 
@@ -47,10 +46,16 @@ class App extends Component {
   }
 
   getPreCleanUp = (preCleanUpId) => {
-    this.setState({ currentLocation: 'precleanup' })
     api.getRequest('/cleanups/precleanups/' + preCleanUpId, preCleanUp => {
-      this.setState({ preCleanUp })
-    })
+      this.setState({ preCleanUp, currentLocation: 'precleanup' })
+     })
+  }  
+
+  addPostCleanUp = (postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption) => {
+    let newPostCleanUp = { postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption }
+    api.postRequest('/cleanups/postcleanups/add', newPostCleanUp, postCleanUps =>
+          this.setState({ postCleanUps })
+    )
   }
 
   updateCurrentLocation = (location) => {
