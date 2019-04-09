@@ -1,13 +1,12 @@
 .postCleanUp-feed {
-    margin-bottom: 60px;
     padding: 5px;
     position:relative;
-    top: 185px;
+    top: 85px;
 }
 
 .postCleanUp-feed-card {
     box-shadow: 2px 2px 5px black;
-    padding: 30px;
+    padding: 20px;
     margin-bottom: 10px;
 }
 
@@ -15,7 +14,7 @@
     align-items: center;
     border-bottom: 1px solid gray;
     display: flex;
-    padding: 30px;
+    padding: 10px;
 }
 
 .postCleanUp__image {
@@ -26,12 +25,12 @@
 .postCleanUp__avatar {
     border-radius: 360px;
     box-shadow: 1px 1px 5px black;
-    height: 70px;
-    width: 70px;
+    height: 35px;
+    width: 35px;
 }
 
 .postCleanUp__location {
-    font-size: 40px;
+    font-size: 20px;
     font-weight: bolder;
     padding: 10px;
     text-align: center;
@@ -43,13 +42,13 @@
 }
 
 .postCleanUp-feed__button-icon-down {
-    font-size: 50px;
+    font-size: 35px;
     padding: 10px;
     margin-top: 13px;
 }
 
 .postCleanUp-feed__button-icon-up {
-    font-size: 50px;
+    font-size: 35px;
     padding: 10px;
     margin-bottom: 13px;
 }
@@ -61,12 +60,12 @@
 
 .postCleanUp__votes {
     font-weight: bolder;
-    font-size: 40px;
-    margin-top: 15px;
+    font-size: 20px;
+    margin-top: 20px;
 }
 
 .postCleanUp__caption {
-    font-size: 30px;
+    font-size: 20px;
     padding: 5px;
 }
 

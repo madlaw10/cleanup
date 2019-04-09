@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 6%;
     width: 100%;
     text-align: center;
     z-index: 999;
@@ -18,6 +17,10 @@
     color: white;
     margin: 5px;
 }
+
+.footer__button:hover {
+    text-shadow: 2px 2px 2px black;
+  }
 
 .material-icons {
     font-size: 100px !important;

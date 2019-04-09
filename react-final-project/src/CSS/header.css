@@ -2,9 +2,9 @@
 .avatar__image {
   border-radius: 360px;
   box-shadow: 1px 1px 5px black;
-  height: 100px;
+  height: 60px;
   margin: 20px;
-  width: 100px;
+  width: 60px;
 }
 
 .header {
@@ -32,7 +32,7 @@
 }
 
 .material-icons-outlined {
-  font-size: 100px;
+  font-size: 40px;
 }
   
 
