@@ -62,10 +62,12 @@ class App extends Component {
       <div>
         <Header />
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
-        {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} />}
-        {this.state.currentLocation === "postcleanup" && <PostCleanUp postCleanUp={this.state.postCleanUp} />}
-        {this.state.currentLocation === "precleanups" && <PreCleanUps preCleanUps={this.state.preCleanUps} getPreCleanUp={this.getPreCleanUp} currentLocation={this.state.currentLocation} />}
-        {this.state.currentLocation === "precleanup" && <PreCleanUp preCleanUp={this.state.preCleanUp} />}
+        <div className="body__container">
+          {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} />}
+          {this.state.currentLocation === "postcleanup" && <PostCleanUp postCleanUp={this.state.postCleanUp} />}
+          {this.state.currentLocation === "precleanups" && <PreCleanUps preCleanUps={this.state.preCleanUps} getPreCleanUp={this.getPreCleanUp} currentLocation={this.state.currentLocation} />}
+          {this.state.currentLocation === "precleanup" && <PreCleanUp preCleanUp={this.state.preCleanUp} />}
+        </div>
         {this.state.currentLocation === "landingpage" && <LandingPage />}
       </div>
     )
