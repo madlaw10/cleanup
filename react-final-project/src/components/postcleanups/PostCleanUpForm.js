@@ -5,9 +5,9 @@ class PostCleanUpForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            postCleanUpPhoto: 'Add a photo of the Cleanup',
-            postCleanUpLocation: 'Where was the Cleanup?',
-            postCleanUpCaption: 'Write a caption for the Cleanup'
+            postCleanUpPhoto: '',
+            postCleanUpLocation: '',
+            postCleanUpCaption: ''
         };
 
         this.baseState=this.state;
@@ -42,6 +42,7 @@ class PostCleanUpForm extends Component {
                         className="postCleanUpForm__location"
                         name="postCleanUpLocation"
                         type="text"
+                        placeholder="Where was the Cleanup?"
                         value={this.state.postCleanUpLocation}
                         onChange={this.handleInputChange} />
                 </label>
@@ -51,6 +52,7 @@ class PostCleanUpForm extends Component {
                         className="postCleanUpForm__photo"
                         name="postCleanUpPhoto"
                         type="text"
+                        placeholder="Add a photo of the Cleanup"
                         value={this.state.postCleanUpPhoto}
                         onChange={this.handleInputChange} />
                 </label>
@@ -60,6 +62,7 @@ class PostCleanUpForm extends Component {
                         className="postCleanUpForm__caption"
                         name="postCleanUpCaption"
                         type="text"
+                        placeholder="Write a caption for the Cleanup"
                         value={this.state.postCleanUpCaption}
                         onChange={this.handleInputChange} />
                 </label>

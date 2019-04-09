@@ -5,7 +5,7 @@ class CleanUpCommentForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            cleanUpCommentContent: 'Add your comment to the Cleanup',
+            cleanUpCommentContent: '',
             cleanUpId: props.cleanUpId
         };
 
@@ -41,6 +41,7 @@ class CleanUpCommentForm extends Component {
                         className="cleanUpCommentForm__content"
                         name="cleanUpCommentContent"
                         type="text"
+                        placeholder="Add your comment"
                         value={this.state.cleanUpCommentContent}
                         onChange={this.handleInputChange} />
                 </label>
