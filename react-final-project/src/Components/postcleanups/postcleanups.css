@@ -73,6 +73,10 @@
  padding: 5px;
 }
 
+.postCleanUpForm {
+    margin-top: 10rem;
+}
+
 .hidden{
     display: none;
 }
