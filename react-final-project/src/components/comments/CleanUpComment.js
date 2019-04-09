@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default (props) => {
-    console.log(props.cleanUpComment.content)
     return (
     <div className = "comments-feed">
         <div className= "comment-feed-card">

@@ -4,7 +4,6 @@ import CleanUpComments from '../comments/CleanUpComments'
 export default (props) => {
     const postCleanUpId = props.postCleanUp.id
     const cleanUpComments = props.postCleanUp.comments
-    console.log(cleanUpComments)
     return (
         <div className="postCleanUp-feed">
             <div className="postCleanUp-feed-card">
@@ -32,7 +31,7 @@ export default (props) => {
                     <div>
                     {props.currentLocation === "postcleanup" && <CleanUpComments cleanUpComments={cleanUpComments} />}
                     </div>
-            </div>
+                </div>
             </div>
         </div>
     )
