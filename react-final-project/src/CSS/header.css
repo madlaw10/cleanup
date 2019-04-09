@@ -25,7 +25,9 @@
 
 .mobile__menu__button {
   color: white;
+  height: 60px;
   margin: 10px;
+  width: 40px;
 }
 
 .mobile__menu__button:hover,

@@ -5,7 +5,7 @@ export default function Header() {
     return (
     
     <div className="header">
-        <i className="material-icons-outlined mobile__menu__button">menu</i>
+        <img className="mobile__menu__button" src="https://raw.githubusercontent.com/nate-fritz/nate-fritz.github.io/master/static/media/cleanuplogo.png" />
         <div className="nav">
             <h3 className="nav__item">CleanUps</h3>
             <h3 className="nav__item">Map</h3>
