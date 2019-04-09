@@ -34,9 +34,8 @@ class App extends Component {
   }
 
   getPostCleanUp = (postCleanUpId) => {
-    this.setState({ currentLocation: 'postcleanup' })
     api.getRequest('/cleanups/postcleanups/' + postCleanUpId, postCleanUp => {
-      this.setState({ postCleanUp })
+      this.setState({ postCleanUp, currentLocation: 'postcleanup' })
     })
   }
 
@@ -47,9 +46,8 @@ class App extends Component {
   }
 
   getPreCleanUp = (preCleanUpId) => {
-    this.setState({ currentLocation: 'precleanup' })
     api.getRequest('/cleanups/precleanups/' + preCleanUpId, preCleanUp => {
-      this.setState({ preCleanUp })
+      this.setState({ preCleanUp, currentLocation: 'precleanup' })
     })
   }
 
@@ -63,7 +61,7 @@ class App extends Component {
         <Header />
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
         {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} />}
-        {this.state.currentLocation === "postcleanup" && <PostCleanUp postCleanUp={this.state.postCleanUp} />}
+        {this.state.currentLocation === "postcleanup" && <PostCleanUp postCleanUp={this.state.postCleanUp} currentLocation={this.state.currentLocation}/>}
         {this.state.currentLocation === "precleanups" && <PreCleanUps preCleanUps={this.state.preCleanUps} getPreCleanUp={this.getPreCleanUp} currentLocation={this.state.currentLocation} />}
         {this.state.currentLocation === "precleanup" && <PreCleanUp preCleanUp={this.state.preCleanUp} />}
         {this.state.currentLocation === "landingpage" && <LandingPage />}

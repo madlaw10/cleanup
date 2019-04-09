@@ -4,8 +4,6 @@ import CleanUpComments from '../comments/CleanUpComments'
 export default (props) => {
     const postCleanUpId = props.postCleanUp.id
     const cleanUpComments = props.postCleanUp.comments
-    console.log(props.postCleanUp)
-    console.log(cleanUpComments)
     return (
         <div className="postCleanUp-feed">
             <div className="postCleanUp-feed-card">
@@ -31,9 +29,9 @@ export default (props) => {
                     <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
                     {props.currentLocation === "postcleanups" && <button className="postCleanUp-toggle__button" onClick={() => props.getPostCleanUp(postCleanUpId)}>View More</button>}
                     <div>
-                    <CleanUpComments comments={props.postCleanUp.comments} />
+                    {props.currentLocation === "postcleanup" && <CleanUpComments cleanUpComments={cleanUpComments} />}
                     </div>
-            </div>
+                </div>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
-async function getRequest(location, callback) {
-    await fetch(location)
-        .then(async res => await res.json())
-        .then(async data => await callback(data))
+function getRequest(location, callback) {
+    fetch(location)
+        .then(res => res.json())
+        .then(data => callback(data))
         .catch(err => console.log(err))
 }
 
