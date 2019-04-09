@@ -1,8 +1,8 @@
 .footer {
     position: fixed;
-    background: #52c234;  
-    background: -webkit-linear-gradient(to right, #52c234, #0a720f);  
-    background: linear-gradient(to right, #52c234, #0a720f); 
+    background: #01bc3d;  
+    background: -webkit-linear-gradient(to right, #01bc3d, #0a720f);  
+    background: linear-gradient(to right, #01bc3d, #0a720f); 
     bottom: 0;
     box-shadow: 2px -2px 10px black;
     display: flex;
@@ -19,9 +19,17 @@
 }
 
 .footer__button:hover {
+    cursor: pointer;
     text-shadow: 2px 2px 2px black;
   }
 
 .material-icons {
     font-size: 100px !important;
+}
+
+@media only screen and (min-width: 700px) {
+    .footer {
+        display: none;
+    }
+
 }
