@@ -1,5 +1,5 @@
 .body__container {
-    padding: 15px;
+    padding: 5px;
     padding-bottom: 80px;
 }
 
@@ -9,4 +9,7 @@
         padding-right: 15%;
     }
 
+}
+body {
+    background-color: #d5edd8;
 }

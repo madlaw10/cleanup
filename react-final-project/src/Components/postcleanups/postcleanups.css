@@ -1,10 +1,15 @@
+.postCleanUps__container {
+    width: 100%;
+}
+
 .postCleanUp-feed {
     padding: 5px;
     position:relative;
-    top: 85px;
+    top: 10px;
 }
 
 .postCleanUp-feed-card {
+    background-color: white;
     box-shadow: 2px 2px 5px black;
     padding: 20px;
     margin-bottom: 10px;
@@ -73,10 +78,112 @@
  padding: 5px;
 }
 
-.postCleanUpForm {
-    margin-top: 10rem;
-}
-
 .hidden{
     display: none;
 }
+
+.postCleanUpForm {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.postCleanUpForm__btn {
+    background: #01bc3d;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 40px;
+    margin-top: 20px;
+    width: 90%;
+}
+
+.postCleanUpForm__btn:hover {
+    background: #0a720f;
+}
+
+.form__label {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+.postCleanUpForm__caption,
+.postCleanUpForm__location,
+.postCleanUpForm__photo {
+    height: 40px;
+    margin-top: 10px;
+    width: 87%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+/* Accordion CSS START */
+
+.tab {
+    margin-bottom: 1px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding-top: 90px;
+    width: 100%;
+  }
+
+  .postCleanUpForm__toggle {
+    background: #01bc3d;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 3;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .toggle__checkbox {
+      display: none;
+  }
+
+  .tab-content {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+  }
+
+  /* :checked */
+  .tab input:checked ~ .tab-content {
+    max-height: 100vh;
+  }
+  /* Icon */
+  .tab label::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 3em;
+    height: 3em;
+    line-height: 3;
+    text-align: center;
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+  }
+  .tab input[type=checkbox] + label::after {
+    content: "+";
+  }
+  .tab input[type=radio] + label::after {
+    content: "\25BC";
+  }
+  .tab input[type=checkbox]:checked + label::after {
+    transform: rotate(315deg);
+  }
+  .tab input[type=radio]:checked + label::after {
+    transform: rotateX(180deg);
+  }
+  

@@ -34,40 +34,47 @@ class PostCleanUpForm extends Component {
 
     render () {
         return (
-            <form className="postCleanUpForm" onSubmit={this.handleSubmit}>
-                <h2>Add Your Completed Cleanup</h2>
-                <label>
-                    Location:
+            <div className="tab">
+            <input id="tab-one" className="toggle__checkbox" type="checkbox" name="tabs" />
+            <label for="tab-one" className="postCleanUpForm__toggle">Share a CleanUp</label>
+            <div className="tab-content">
+                <form className="postCleanUpForm" onSubmit={this.handleSubmit}>
+                    <label for="location-input" className="form__label">
+                        Location:</label>
                     <input 
                         className="postCleanUpForm__location"
                         name="postCleanUpLocation"
+                        id="location-input"
                         type="text"
                         placeholder="Where was the Cleanup?"
                         value={this.state.postCleanUpLocation}
                         onChange={this.handleInputChange} />
-                </label>
-                <label>
-                    Photo:
+                    <label for="photo-input" className="form__label">
+                        Photo:</label>
                     <input 
                         className="postCleanUpForm__photo"
                         name="postCleanUpPhoto"
+                        id="photo-input"
                         type="text"
                         placeholder="Add a photo of the Cleanup"
                         value={this.state.postCleanUpPhoto}
                         onChange={this.handleInputChange} />
-                </label>
-                <label>
-                    Caption:
+                    <label for="caption-input" className="form__label">
+                        Caption:</label>
                     <input 
                         className="postCleanUpForm__caption"
                         name="postCleanUpCaption"
+                        id="caption-input"
                         type="text"
                         placeholder="Write a caption for the Cleanup"
                         value={this.state.postCleanUpCaption}
                         onChange={this.handleInputChange} />
-                </label>
-                <input type="submit" value="Add Completed Cleanup" />
-            </form>
+                    <input 
+                        className="postCleanUpForm__btn"
+                        type="submit" value="Add Completed Cleanup" />
+                </form>
+            </div>
+        </div>
         )
     }
 }
