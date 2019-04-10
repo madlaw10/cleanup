@@ -23,14 +23,6 @@
   z-index: 999;
 }
 
-.mobile__menu__button {
-  color: white;
-  height: 60px;
-  margin: 10px;
-  width: 40px;
-}
-
-.mobile__menu__button:hover,
 .user__points:hover,
 .avatar__image:hover {
   cursor: pointer;
@@ -58,6 +50,7 @@
   color: white;
   height: 20px;
   margin-top: 30px;
+  min-width: 90px;
   padding: 10px;
   padding-right: 50px;
 }
@@ -68,14 +61,15 @@
     display: flex;
     justify-content: space-between;
     padding-left: 95px;
-    width: 400px;
+    width: 70%;
   }
 
   .nav__item {
     padding: 20px;
     padding-bottom: 29px;
     padding-top: 29px;
-    
+    text-align: center;
+    width: 100%;
   }
 
   .nav__item:hover {

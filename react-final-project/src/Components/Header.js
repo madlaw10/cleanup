@@ -1,10 +1,13 @@
 import React from 'react'
+import Dropdown from '../components/dropdown/Dropdown';
 import '../css/header.css';
 
 export default (props) => {
     return (
         <div className="header">
-            <img className="mobile__menu__button" src="https://raw.githubusercontent.com/nate-fritz/nate-fritz.github.io/master/static/media/cleanuplogo.png" alt="Cleanup Logo" />
+            <div className="dropdown">
+                <Dropdown />
+            </div>
             <div className="nav">
                 <h3 onClick={() => props.updateCurrentLocation('precleanups')} className="nav__item">CleanUps</h3>
                 <h3 onClick={() => props.updateCurrentLocation('landingpage')} className="nav__item">Map</h3>
