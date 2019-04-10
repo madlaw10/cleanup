@@ -3,7 +3,7 @@ package org.wecancodeit.finalproject.models;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.annotation.Resource;
 
@@ -12,7 +12,6 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.wecancodeit.finalproject.models.PreCleanUp;
 import org.wecancodeit.finalproject.repositories.PreCleanUpRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,7 +27,7 @@ public class PreCleanUpTest {
 	@Test
 	public void shouldLoadPreCleanUpByLocation() {
 		PreCleanUp preCleanUpTest = preCleanUpRepo
-				.save(new PreCleanUp(LocalDateTime.now(), "location", "description"));
+				.save(new PreCleanUp(LocalDate.now(), "location", "description"));
 
 		entityManager.persist(preCleanUpTest);
 		entityManager.flush();

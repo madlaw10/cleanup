@@ -25,12 +25,12 @@ const DDToggler = (props) => {
 const DDList = (props) => {
   return (<div className = {props.opened ? 'opened' : 'closed'}>
         <div className="menu__items">
-            <h3 class="menu__item">Profile</h3>
-            <h3 class="menu__item">Rewards</h3>
-            <h3 class="menu__item">CleanUps</h3>
-            <h3 class="menu__item">Maps</h3>
-            <h3 class="menu__item">History</h3>
-            <h3 class="menu__item">About</h3>
+            <h3 className="menu__item">Profile</h3>
+            <h3 className="menu__item">Rewards</h3>
+            <h3 className="menu__item">CleanUps</h3>
+            <h3 className="menu__item">Maps</h3>
+            <h3 className="menu__item">History</h3>
+            <h3 className="menu__item">About</h3>
         </div> 
     </div>)
 }
