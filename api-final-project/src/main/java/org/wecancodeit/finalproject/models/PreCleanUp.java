@@ -1,28 +1,29 @@
 package org.wecancodeit.finalproject.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
+
 
 @Entity
 public class PreCleanUp extends CleanUp {
 	
 	// A user needs to be able to "join" this clean-up
-	
-	private LocalDateTime scheduledDate;
+	// Need a  time variable
+	private LocalDate scheduledDate;
 	@Lob
 	private String description;
 	public PreCleanUp () {
 	}
 	
-	public PreCleanUp(LocalDateTime scheduledDate, String location, String description) {
+	public PreCleanUp(LocalDate scheduledDate, String location, String description) {
 		super(location);
 		this.scheduledDate = scheduledDate;
 		this.description = description;
 	}
 
-	public LocalDateTime getScheduledDate() {
+	public LocalDate getScheduledDate() {
 		return scheduledDate;
 	}
 

@@ -1,5 +1,6 @@
 package org.wecancodeit.finalproject.controllers;
 
+import java.time.LocalDate;
 import java.util.Collection;
 
 import javax.annotation.Resource;
@@ -36,7 +37,7 @@ public class CleanUpController {
 	
 	@GetMapping("/precleanups")
 	public Collection<PreCleanUp> getPreCleanUps() {
-		return (Collection<PreCleanUp>)preCleanUpRepo.findAll();
+		return (Collection<PreCleanUp>)preCleanUpRepo.OrderByScheduledDateAsc();
 	}
 	
 	@GetMapping("/postcleanups/{id}")
@@ -58,5 +59,16 @@ public class CleanUpController {
 		postCleanUpRepo.save(new PostCleanUp(image, location, caption));
 		return (Collection<PostCleanUp>)postCleanUpRepo.findAll();
 	} 
+	
+	@PostMapping("/precleanups/add")
+	public Collection<PreCleanUp> addPreCleanUp(@RequestBody String body) throws JSONException {
+		JSONObject newPreCleanUp = new JSONObject(body);
+		String location = newPreCleanUp.getString("preCleanUpLocation");
+		String description = newPreCleanUp.getString("preCleanUpDescription");
+		LocalDate scheduledDate = LocalDate.parse(newPreCleanUp.getString("preCleanUpScheduledDate"));
+		preCleanUpRepo.save(new PreCleanUp(scheduledDate, location, description));
+		return (Collection<PreCleanUp>)preCleanUpRepo.OrderByScheduledDateAsc();
+	} 
+	
 
 }

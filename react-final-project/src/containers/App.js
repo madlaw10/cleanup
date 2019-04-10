@@ -58,6 +58,13 @@ class App extends Component {
     )
   }
 
+  addPreCleanUp = (preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate) => {
+    let newPreCleanUp = { preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate }
+    api.postRequest('/cleanups/precleanups/add', newPreCleanUp, preCleanUps =>
+          this.setState({ preCleanUps })
+    )
+  }
+
   addCleanUpComment = (cleanUpCommentContent, cleanUpId) => {
     let newCleanUpComment = {cleanUpCommentContent, cleanUpId }
     api.postRequest('/comments/add', newCleanUpComment, postCleanUp => 
@@ -77,7 +84,7 @@ class App extends Component {
         <div className="body__container">
           {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addCleanUpComment = {this.addCleanUpComment} />}
           {this.state.currentLocation === "postcleanup" && <PostCleanUp postCleanUp={this.state.postCleanUp} currentLocation={this.state.currentLocation} addCleanUpComment = {this.addCleanUpComment} />}
-          {this.state.currentLocation === "precleanups" && <PreCleanUps preCleanUps={this.state.preCleanUps} getPreCleanUp={this.getPreCleanUp} currentLocation={this.state.currentLocation} />}
+          {this.state.currentLocation === "precleanups" && <PreCleanUps preCleanUps={this.state.preCleanUps} getPreCleanUp={this.getPreCleanUp} currentLocation={this.state.currentLocation} addPreCleanUp={this.addPreCleanUp} />}
           {this.state.currentLocation === "precleanup" && <PreCleanUp preCleanUp={this.state.preCleanUp} />}
         </div>
         {this.state.currentLocation === "landingpage" && <LandingPage />}
