@@ -72,7 +72,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header updateCurrentLocation={this.updateCurrentLocation} />
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
         <div className="body__container">
           {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addCleanUpComment = {this.addCleanUpComment} />}
