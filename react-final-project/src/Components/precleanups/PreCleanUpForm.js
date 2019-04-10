@@ -34,40 +34,48 @@ class PreCleanUpForm extends Component {
 
     render () {
         return (
-            <form className="preCleanUpForm" onSubmit={this.handleSubmit}>
-                <h2>Plan A Cleanup</h2>
-                <label>
-                    Location:
-                    <input 
-                        className="preCleanUpForm__location"
-                        name="preCleanUpLocation"
-                        type="text"
-                        placeholder="Where are you cleaning?"
-                        value={this.state.preCleanUpLocation}
-                        onChange={this.handleInputChange} />
-                </label>
-                <label>
-                    Description:
-                    <input 
-                        className="preCleanUpForm__description"
-                        name="preCleanUpDescription"
-                        type="text"
-                        placeholder="Add your plan for the Cleanup"
-                        value={this.state.preCleanUpDescription}
-                        onChange={this.handleInputChange} />
-                </label>
-                <label>
-                    Scheduled Date:
-                    <input 
-                        className="preCleanUpForm__scheduledDate"
-                        name="preCleanUpScheduledDate"
-                        type="text"
-                        placeholder="YYYY-MM-DD"
-                        value={this.state.preCleanUpScheduledDate}
-                        onChange={this.handleInputChange} />
-                </label>
-                <input type="submit" value="Add Cleanup" />
-            </form>
+            <div className="tab">
+            <input id="tab-one" className="toggle__checkbox" type="checkbox" name="tabs" />
+            <label for="tab-one" className="postCleanUpForm__toggle">Plan A Cleanup</label>
+            <div className="tab-content">
+                <form className="preCleanUpForm" onSubmit={this.handleSubmit}>
+                    <label for="location-input" className="form__label">
+                        Location:</label>
+                        <input 
+                            className="preCleanUpForm__location"
+                            name="preCleanUpLocation"
+                            id="location-input"
+                            type="text"
+                            placeholder="Where are you cleaning?"
+                            value={this.state.preCleanUpLocation}
+                            onChange={this.handleInputChange} />
+                    <label for="description-input" className="form__label">
+                    Description:</label>
+                        <input 
+                            className="preCleanUpForm__description"
+                            name="preCleanUpDescription"
+                            id="description-input"
+                            type="text"
+                            placeholder="Add your plan for the Cleanup"
+                            value={this.state.preCleanUpDescription}
+                            onChange={this.handleInputChange} />
+                    <label for="description-input" className="form__label">
+                    Scheduled Date:</label>
+                        <input 
+                            className="preCleanUpForm__scheduledDate"
+                            name="preCleanUpScheduledDate"
+                            id="date-input"
+                            type="text"
+                            placeholder="YYYY-MM-DD"
+                            value={this.state.preCleanUpScheduledDate}
+                            onChange={this.handleInputChange} />
+                    <input
+                        className="preCleanUpForm__btn" 
+                        type="submit" 
+                        value="Add Cleanup" />
+                </form>
+            </div>
+        </div>
         )
     }
 }

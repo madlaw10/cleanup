@@ -6,8 +6,8 @@ import PreCleanUpForm from './PreCleanUpForm'
 export default (props) => {
     return (
         <div>
+            <PreCleanUpForm addPreCleanUp={props.addPreCleanUp} />
             {props.preCleanUps.map(preCleanUp => <PreCleanUp key={preCleanUp.id} preCleanUp={preCleanUp} getPreCleanUp={props.getPreCleanUp} currentLocation={props.currentLocation} />)}
-        <PreCleanUpForm addPreCleanUp={props.addPreCleanUp} />
         </div>
     )
 }
