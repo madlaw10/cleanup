@@ -36,10 +36,10 @@ class PreCleanUpForm extends Component {
         return (
             <div className="tab">
             <input id="tab-one" className="toggle__checkbox" type="checkbox" name="tabs" />
-            <label for="tab-one" className="postCleanUpForm__toggle">Plan A Cleanup</label>
+            <label htmlFor="tab-one" className="postCleanhtmlForm__toggle">Plan A Cleanup</label>
             <div className="tab-content">
                 <form className="preCleanUpForm" onSubmit={this.handleSubmit}>
-                    <label for="location-input" className="form__label">
+                    <label htmlFor="location-input" className="form__label">
                         Location:</label>
                         <input 
                             className="preCleanUpForm__location"
@@ -49,7 +49,7 @@ class PreCleanUpForm extends Component {
                             placeholder="Where are you cleaning?"
                             value={this.state.preCleanUpLocation}
                             onChange={this.handleInputChange} />
-                    <label for="description-input" className="form__label">
+                    <label htmlFor="description-input" className="form__label">
                     Description:</label>
                         <input 
                             className="preCleanUpForm__description"
@@ -59,7 +59,7 @@ class PreCleanUpForm extends Component {
                             placeholder="Add your plan for the Cleanup"
                             value={this.state.preCleanUpDescription}
                             onChange={this.handleInputChange} />
-                    <label for="description-input" className="form__label">
+                    <label htmlFor="description-input" className="form__label">
                     Scheduled Date:</label>
                         <input 
                             className="preCleanUpForm__scheduledDate"

@@ -29,7 +29,7 @@ export default (props) => {
                     <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
                     {props.currentLocation === "postcleanups" && <button className="postCleanUp-toggle__button" onClick={() => props.getPostCleanUp(postCleanUpId)}>View More</button>}
                     <div>
-                    {props.currentLocation === "postcleanup" && <CleanUpComments cleanUpComments={cleanUpComments} addCleanUpComment = {props.addCleanUpComment} cleanUpId = {postCleanUpId}/>}
+                        {props.currentLocation === "postcleanup" && <CleanUpComments cleanUpComments={cleanUpComments} addPostCleanUpComment = {props.addPostCleanUpComment} cleanUpId = {postCleanUpId} currentLocation={props.currentLocation}/>}
                     </div>
                 </div>
             </div>

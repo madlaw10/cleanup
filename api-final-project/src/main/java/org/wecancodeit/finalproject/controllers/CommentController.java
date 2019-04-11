@@ -36,20 +36,23 @@ public class CommentController {
 		return commentRepo.findById(id).get();
 	}
 
-	@PostMapping("/add")
-	public CleanUp addCleanUpComment(@RequestBody String body)throws JSONException {
+	@PostMapping("/add/postcleanupcomment")
+	public CleanUp addPostCleanUpComment(@RequestBody String body)throws JSONException {
 	JSONObject newCleanUpComment = new JSONObject(body);
 	String content = newCleanUpComment.getString("cleanUpCommentContent");
-	
-	CleanUp cleanUp = null;
-		if (postCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))) == null) {
-			cleanUp = preCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))).get();
-		} else {
-			cleanUp = postCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))).get();
-		}
+	CleanUp cleanUp = postCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))).get();
 	commentRepo.save(new CleanUpComment(content, cleanUp));	
 		return cleanUp;
-		}
+	}
+	
+	@PostMapping("/add/precleanupcomment")
+	public CleanUp addPreCleanUpComment(@RequestBody String body)throws JSONException {
+	JSONObject newCleanUpComment = new JSONObject(body);
+	String content = newCleanUpComment.getString("cleanUpCommentContent");
+	CleanUp cleanUp = preCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))).get();
+	commentRepo.save(new CleanUpComment(content, cleanUp));	
+		return cleanUp;
+	}
 }
 
 
