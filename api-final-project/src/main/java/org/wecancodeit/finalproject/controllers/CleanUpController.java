@@ -70,5 +70,20 @@ public class CleanUpController {
 		return (Collection<PreCleanUp>)preCleanUpRepo.OrderByScheduledDateAsc();
 	} 
 	
+	@PostMapping("/postcleanups/{id}/voteup")
+	public Collection<PostCleanUp> voteUp(@PathVariable Long id) throws JSONException {
+		PostCleanUp postCleanUpToVoteUp = postCleanUpRepo.findById(id).get();
+		postCleanUpToVoteUp.increaseCount();
+		postCleanUpRepo.save(postCleanUpToVoteUp);
+		return (Collection<PostCleanUp>)postCleanUpRepo.findAll();
+	}
+	
+	@PostMapping("/postcleanups/{id}/votedown")
+	public Collection<PostCleanUp> voteDown(@PathVariable Long id) throws JSONException {
+		PostCleanUp postCleanUpToVoteDown = postCleanUpRepo.findById(id).get();
+		postCleanUpToVoteDown.decreaseCount();
+		postCleanUpRepo.save(postCleanUpToVoteDown);
+		return (Collection<PostCleanUp>)postCleanUpRepo.findAll();
+	}
 
 }

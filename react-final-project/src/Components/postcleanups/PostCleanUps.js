@@ -8,8 +8,7 @@ export default (props) => {
         <div>
             <PostCleanUpForm addPostCleanUp={props.addPostCleanUp}/>
             {props.postCleanUps.map(postCleanUp =>
-                <PostCleanUp key={postCleanUp.id} postCleanUp={postCleanUp} getPostCleanUp={props.getPostCleanUp} currentLocation={props.currentLocation} addPostCleanUpComment = {props.addPostCleanUpComment} />)}
-             
+                <PostCleanUp key={postCleanUp.id} postCleanUp={postCleanUp} getPostCleanUp={props.getPostCleanUp} currentLocation={props.currentLocation} addPostCleanUpComment = {props.addPostCleanUpComment} voteUp = {props.voteUp} voteDown = {props.voteDown}/>)}  
         </div>
     )
 }
