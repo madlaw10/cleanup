@@ -36,10 +36,10 @@ class PostCleanUpForm extends Component {
         return (
             <div className="tab">
             <input id="tab-one" className="toggle__checkbox" type="checkbox" name="tabs" />
-            <label for="tab-one" className="postCleanUpForm__toggle">Share a CleanUp</label>
+            <label htmlFor="tab-one" className="postCleanUpForm__toggle">Share a CleanUp</label>
             <div className="tab-content">
                 <form className="postCleanUpForm" onSubmit={this.handleSubmit}>
-                    <label for="location-input" className="form__label">
+                    <label htmlFor="location-input" className="form__label">
                         Location:</label>
                     <input 
                         className="postCleanUpForm__location"
@@ -49,7 +49,7 @@ class PostCleanUpForm extends Component {
                         placeholder="Where was the Cleanup?"
                         value={this.state.postCleanUpLocation}
                         onChange={this.handleInputChange} />
-                    <label for="photo-input" className="form__label">
+                    <label htmlFor="photo-input" className="form__label">
                         Photo:</label>
                     <input 
                         className="postCleanUpForm__photo"
@@ -59,7 +59,7 @@ class PostCleanUpForm extends Component {
                         placeholder="Add a photo of the Cleanup"
                         value={this.state.postCleanUpPhoto}
                         onChange={this.handleInputChange} />
-                    <label for="caption-input" className="form__label">
+                    <label htmlFor="caption-input" className="form__label">
                         Caption:</label>
                     <input 
                         className="postCleanUpForm__caption"

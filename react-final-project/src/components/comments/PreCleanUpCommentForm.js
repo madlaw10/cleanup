@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class CleanUpCommentForm extends Component {
+class PreCleanUpCommentForm extends Component {
 
     constructor(props) {
         super(props)
@@ -27,18 +27,18 @@ class CleanUpCommentForm extends Component {
     
     handleSubmit(event) {
         event.preventDefault();
-        this.props.addCleanUpComment(this.state.cleanUpCommentContent, this.state.cleanUpId);
+        this.props.addPreCleanUpComment(this.state.cleanUpCommentContent, this.state.cleanUpId);
         this.setState(this.baseState);
     }
 
     render () {
         return (
-            <form className="cleanUpCommentForm" onSubmit={this.handleSubmit}>
+            <form className="preCleanUpCommentForm" onSubmit={this.handleSubmit}>
                 <h2>Add A Comment</h2>
                 <label>
                     Your Comment:
                     <input 
-                        className="cleanUpCommentForm__content"
+                        className="preCleanUpCommentForm__content"
                         name="cleanUpCommentContent"
                         type="text"
                         placeholder="Add your comment"
@@ -51,4 +51,4 @@ class CleanUpCommentForm extends Component {
     }
 }
 
-export default CleanUpCommentForm;
+export default PreCleanUpCommentForm;

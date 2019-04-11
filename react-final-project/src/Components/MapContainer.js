@@ -8,8 +8,8 @@ export class MapContainer extends Component {
         google={this.props.google}
         zoom={14}
         initialCenter={{
-         lat: -1.2884,
-         lng: 36.8233
+         lat: 39.9611,
+         lng: -82.9987
         }}
       />
     );
