@@ -8,6 +8,7 @@ import PostCleanUp from '../components/postcleanups/PostCleanUp'
 import PreCleanUps from '../components/precleanups/PreCleanUps'
 import PreCleanUp from '../components/precleanups/PreCleanUp'
 import api from '../util/api'
+import Users from '../components/users/Users'
 
 class App extends Component {
 
@@ -17,14 +18,17 @@ class App extends Component {
       postCleanUps: [],
       postCleanUp: {},
       preCleanUps: [],
-      currentLocation: 'landingpage',
-      preCleanUp: {}
+      preCleanUp: {},
+      users:[],
+      user:{},
+      currentLocation: 'landingpage'
     }
   }
 
   componentDidMount() {
     this.getPostCleanUps()
     this.getPreCleanUps()
+    this.getUsers()
   }
 
   getPostCleanUps = () => {
@@ -50,6 +54,18 @@ class App extends Component {
       this.setState({ preCleanUp, currentLocation: 'precleanup' })
      })
   }  
+
+  getUsers = () => {
+    api.getRequest('/users/leaderboard', users => {
+      this.setState({ users })
+    })
+  }
+
+  getUser = (userId) => {
+    api.getRequest('/user/' + userId, user => {
+      this.setState({ user, currentLocation: 'user' })
+    })
+  }
 
   addPostCleanUp = (postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption) => {
     let newPostCleanUp = { postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption }
@@ -105,6 +121,8 @@ class App extends Component {
           {this.state.currentLocation === "precleanups" && <PreCleanUps preCleanUps={this.state.preCleanUps} getPreCleanUp={this.getPreCleanUp} currentLocation={this.state.currentLocation} addPreCleanUp={this.addPreCleanUp} addPreCleanUpComment = {this.addPreCleanUpComment} />}
 
           {this.state.currentLocation === "precleanup" && <PreCleanUp preCleanUp={this.state.preCleanUp} currentLocation={this.state.currentLocation} addPreCleanUpComment = {this.addPreCleanUpComment} />}
+
+          {this.state.currentLocation === "users" && <Users users={this.state.users} currentLocation={this.state.currentLocation} />}
 
         </div>
         {this.state.currentLocation === "landingpage" && <LandingPage />}
