@@ -5,9 +5,9 @@ import CleanUpCommentForm from './CleanUpCommentForm';
 export default (props) => {
     return (
       <div>
+      <CleanUpCommentForm addCleanUpComment = {props.addCleanUpComment} cleanUpId = {props.cleanUpId} />
       {props.cleanUpComments
       .map(cleanUpComment => <CleanUpComment key={cleanUpComment.id} cleanUpComment={cleanUpComment} />)}
-      <CleanUpCommentForm addCleanUpComment = {props.addCleanUpComment} cleanUpId = {props.cleanUpId} />
       </div>
     )
 }

@@ -34,9 +34,7 @@ class CleanUpCommentForm extends Component {
     render () {
         return (
             <form className="cleanUpCommentForm" onSubmit={this.handleSubmit}>
-                <h2>Add A Comment</h2>
                 <label>
-                    Your Comment:
                     <input 
                         className="cleanUpCommentForm__content"
                         name="cleanUpCommentContent"
@@ -45,7 +43,7 @@ class CleanUpCommentForm extends Component {
                         value={this.state.cleanUpCommentContent}
                         onChange={this.handleInputChange} />
                 </label>
-               <input type="submit" value="Add Comment" />
+               <input className="commentForm__button" type="submit" value="Add Comment" />
             </form>
         )
     }
