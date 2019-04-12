@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class PreCleanUpForm extends Component {
 
     constructor(props) {
@@ -36,7 +37,7 @@ class PreCleanUpForm extends Component {
         return (
             <div className="tab">
             <input id="tab-one" className="toggle__checkbox" type="checkbox" name="tabs" />
-            <label htmlFor="tab-one" className="postCleanhtmlForm__toggle">Plan A Cleanup</label>
+            <label htmlFor="tab-one" className="postCleanUpForm__toggle">Plan A Cleanup</label>
             <div className="tab-content">
                 <form className="preCleanUpForm" onSubmit={this.handleSubmit}>
                     <label htmlFor="location-input" className="form__label">

@@ -34,7 +34,6 @@ class PreCleanUpCommentForm extends Component {
     render () {
         return (
             <form className="preCleanUpCommentForm" onSubmit={this.handleSubmit}>
-                <h2>Add A Comment</h2>
                 <label>
                     <input 
                         className="preCleanUpCommentForm__content"

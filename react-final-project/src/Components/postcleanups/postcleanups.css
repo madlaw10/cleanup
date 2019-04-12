@@ -206,12 +206,17 @@
     transform: rotateX(180deg);
   }
 
+  .cleanUpCommentForm {
+      display: flex;
+      justify-content: space-between;
+  }
+
   .cleanUpCommentForm__content {
     border: 1px solid black;
     padding: 10px;
     margin-right: 2%;
     margin-bottom: 15px;
-    width: 80%;
+    width: 100%;
   }
 
   .commentForm__button {
@@ -221,12 +226,10 @@
     cursor: pointer;
     font-weight: bold;
     padding: 10px;
-    width: 15%;
   }
 
   .comment__content {
       padding: 10px 10px 10px 0px;
-
   }
 
   
