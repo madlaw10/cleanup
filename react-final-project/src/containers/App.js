@@ -3,12 +3,15 @@ import './App.css';
 import Header from '../components/Header';
 import Footer from '../components/footer/Footer';
 import LandingPage from '../components/LandingPage'
+import MapContainer from '../components/MapContainer'
 import PostCleanUps from '../components/postcleanups/PostCleanUps'
 import PostCleanUp from '../components/postcleanups/PostCleanUp'
 import PreCleanUps from '../components/precleanups/PreCleanUps'
 import PreCleanUp from '../components/precleanups/PreCleanUp'
-import api from '../util/api'
 import Users from '../components/users/Users'
+import User from '../components/users/User'
+import api from '../util/api'
+
 
 class App extends Component {
 
@@ -62,7 +65,7 @@ class App extends Component {
   }
 
   getUser = (userId) => {
-    api.getRequest('/user/' + userId, user => {
+    api.getRequest('/users/' + userId, user => {
       this.setState({ user, currentLocation: 'user' })
     })
   }
@@ -110,9 +113,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header updateCurrentLocation={this.updateCurrentLocation} />
+        <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} />
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
+
         <div className="body__container">
+          {this.state.currentLocation === "mapcontainer" && <MapContainer />}
 
           {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} voteUp = {this.voteUp} voteDown = {this.voteDown} />}
 
@@ -124,8 +129,12 @@ class App extends Component {
 
           {this.state.currentLocation === "users" && <Users users={this.state.users} currentLocation={this.state.currentLocation} />}
 
+          {this.state.currentLocation === "user" && <User user={this.state.user} currentLocation={this.state.currentLocation} />}
+
         </div>
-        {this.state.currentLocation === "landingpage" && <LandingPage />}
+
+        {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} />}
+
       </div>
     )
   }

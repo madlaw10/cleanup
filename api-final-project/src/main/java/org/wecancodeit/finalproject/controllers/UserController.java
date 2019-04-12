@@ -16,6 +16,9 @@ import org.wecancodeit.finalproject.repositories.UserRepository;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+	
+	// Need a 
+	
 	@Resource
 	UserRepository userRepo;
 	
@@ -23,11 +26,10 @@ public class UserController {
 	public Collection<User> getAllUsers(){
 		return (Collection<User>)userRepo.OrderByPointCountDesc();	
 	}
-	@GetMapping("/{id}")
-	public User  getOneUser(@PathVariable Long id){
-		User user = userRepo.findById(id).get();
+	@GetMapping("/{userName}")
+	public User getUserByName(@PathVariable String userName){
+		User user = userRepo.findByUserName(userName);
 		return user;
 	}
 	
-
 }
