@@ -1,0 +1,25 @@
+.user {
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+    margin-top: 20px;
+    padding: 10px 20px 20px 20px;
+}
+
+
+.user__userName {
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
+    text-align: center;
+}
+
+.user__avatar {
+    box-shadow: 1px 1px 5px black;
+    height: auto;
+    width: 100%;
+}
+
+.user__pointCount {
+    font-size: 20px;
+    padding: 10px 5px 5px 0px;
+}
