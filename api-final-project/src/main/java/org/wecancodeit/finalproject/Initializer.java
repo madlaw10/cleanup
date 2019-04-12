@@ -30,11 +30,11 @@ public class Initializer implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		// Users
-		User userZero = userRepo.save(new User("binieth", "https://files.slack.com/files-pri/T14LST83D-FHXBH1XHD/image_from_ios.jpg"));
-		User userOne = userRepo.save(new User("dexter", "https://files.slack.com/files-pri/T14LST83D-FHTNXP05T/image-11.png"));
-		User userTwo = userRepo.save(new User("madlaw10", "https://files.slack.com/files-pri/T14LST83D-FHGCEB70A/bitmoji-20190411022708.png"));
-		User userThree = userRepo.save(new User("nate", "https://files.slack.com/files-pri/T14LST83D-FHXM8020N/bitmoji-20190411024503.png"));
-		User userFour = userRepo.save(new User("eythan", "https://files.slack.com/files-pri/T14LST83D-FHMFRA16V/file.jpg"));
+		User userZero = userRepo.save(new User("binieth", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-binieth.jpg"));
+		User userOne = userRepo.save(new User("dexter", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-jbunny.jpg"));
+		User userTwo = userRepo.save(new User("madlaw10", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-madlaw10.jpg"));
+		User userThree = userRepo.save(new User("nate-fritz", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-nate-fritz.jpg"));
+		User userFour = userRepo.save(new User("eekramm", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-eekramm.jpg"));
 
 		// Pre CleanUps
 		PreCleanUp preCleanUpZero = preCleanUpRepo.save(new PreCleanUp(LocalDate.now(), "Goodale Park", "We are all gathering at Goodale Park again on 4/28 to pick up any trash that has accumulated since our last CleanUp!  Please join us if you're available!"));
