@@ -10,4 +10,6 @@ import org.wecancodeit.finalproject.models.User;
 public interface UserRepository extends CrudRepository <User, Long> {
 
 	List<User> OrderByPointCountDesc();
+
+	User findByUserName(String userName);
 }

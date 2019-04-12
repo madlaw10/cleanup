@@ -1,16 +1,11 @@
 import React from 'react';
-import '../css/landingPage.css';
-import MapContainer from './MapContainer'
+import UserLogin from '../components/users/UserLogin'
 
 
-export default function LandingPage() {
+export default (props) => {
     return (
-
     <div className="landing-page">
-        <section className="map-container">
-            <MapContainer />
-        </section>
+        <UserLogin getUser = {props.getUser} currentLocation={props.currentLocation} />
     </div>
-    
     );
 }
