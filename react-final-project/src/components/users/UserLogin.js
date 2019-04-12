@@ -42,6 +42,7 @@ class UserLogin extends Component {
                     name="userName"
                     id="userName-input"
                     type="text"
+                    autoComplete="userName"
                     placeholder="Username or Email"
                     value={this.state.userName}
                     onChange={this.handleInputChange} />
@@ -53,6 +54,7 @@ class UserLogin extends Component {
                         name="password"
                         id="password-input"
                         type="password"
+                        autoComplete="current-password"
                         placeholder="Password"
                         value={this.state.password}
                         onChange={this.handleInputChange} />

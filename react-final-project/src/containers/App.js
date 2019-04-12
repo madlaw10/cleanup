@@ -64,8 +64,8 @@ class App extends Component {
     })
   }
 
-  getUser = (userId) => {
-    api.getRequest('/users/' + userId, user => {
+  getUser = (userName) => {
+    api.getRequest('/users/' + userName, user => {
       this.setState({ user, currentLocation: 'user' })
     })
   }
