@@ -1,6 +1,6 @@
 .body__container {
-    padding: 5px;
-    padding-bottom: 80px;
+    padding: 80px 5px 5px 5px;
+    
 }
 
 @media only screen and (min-width: 700px) {
@@ -8,8 +8,15 @@
         padding-left: 15%;
         padding-right: 15%;
     }
-
 }
+
+@media only screen and (min-width: 1300px) {
+    .body__container {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+}
+
 body {
     background-color: #d5edd8;
 }

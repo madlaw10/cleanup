@@ -34,16 +34,15 @@ class PostCleanUpCommentForm extends Component {
     render () {
         return (
             <form className="cleanUpCommentForm" onSubmit={this.handleSubmit}>
-                <label>
-                
+                <label for="content__input"></label>
                     <input 
                         className="cleanUpCommentForm__content"
                         name="cleanUpCommentContent"
+                        id="content__input"
                         type="text"
                         placeholder="Add your comment"
                         value={this.state.cleanUpCommentContent}
                         onChange={this.handleInputChange} />
-                </label>
                <input className="commentForm__button" type="submit" value="Add Comment" />
             </form>
         )

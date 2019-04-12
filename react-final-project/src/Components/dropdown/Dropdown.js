@@ -30,6 +30,7 @@ const DDList = (props) => {
             <h3 className="menu__item">CleanUps</h3>
             <h3 className="menu__item">Maps</h3>
             <h3 className="menu__item">History</h3>
+            <h3 className="menu__item">Leaderboard</h3>
             <h3 className="menu__item">About</h3>
         </div> 
     </div>)
