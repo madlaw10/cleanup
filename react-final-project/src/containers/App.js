@@ -115,9 +115,9 @@ class App extends Component {
       <div>
         <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} />
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
+        {this.state.currentLocation === "mapcontainer" && <MapContainer />}
 
         <div className="body__container">
-          {this.state.currentLocation === "mapcontainer" && <MapContainer />}
 
           {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} voteUp = {this.voteUp} voteDown = {this.voteDown} />}
 

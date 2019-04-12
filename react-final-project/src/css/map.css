@@ -5,3 +5,7 @@
     position: fixed;
     margin-top: -5px;
 }
+
+.map-container {
+    padding-top: 80px;
+}
