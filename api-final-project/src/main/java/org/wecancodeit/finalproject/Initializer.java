@@ -29,12 +29,12 @@ public class Initializer implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {
-		// Users
-		User userZero = userRepo.save(new User("binieth", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-binieth.jpg"));
-		User userOne = userRepo.save(new User("dexter", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-jbunny.png"));
-		User userTwo = userRepo.save(new User("madlaw10", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-madlaw10.png"));
-		User userThree = userRepo.save(new User("nate-fritz", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-nate-fritz.png"));
-		User userFour = userRepo.save(new User("eekramm", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-eekramm.jpg"));
+    // Users
+		User userOne = userRepo.save(new User("binieth", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-binieth.jpg"));
+		User userTwo = userRepo.save(new User("dexter", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-jbunny.png"));
+		User userThree = userRepo.save(new User("madlaw10", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-madlaw10.png"));
+		User userFour = userRepo.save(new User("nate-fritz", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-nate-fritz.png"));
+		User userFive = userRepo.save(new User("eekramm", "https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/avatar-eekramm.jpg"));
 
 		// Pre CleanUps
 		PreCleanUp preCleanUpZero = preCleanUpRepo.save(new PreCleanUp(LocalDate.now(), "Goodale Park", "We are all gathering at Goodale Park again on 4/28 to pick up any trash that has accumulated since our last CleanUp!  Please join us if you're available!"));
@@ -57,8 +57,7 @@ public class Initializer implements CommandLineRunner{
 		commentRepo.save(new CleanUpComment("Looks incredible, let's keep CBUS clean!", cleanUpTwo));
 		commentRepo.save(new CleanUpComment("Wow!!", cleanUpThree));
 		commentRepo.save(new CleanUpComment(":heart: this!!!  #trashtag #cleanUp", cleanUpFour));
-		commentRepo.save(new CleanUpComment("Great work guys!", cleanUpFive));
-		
+		commentRepo.save(new CleanUpComment("Great work guys!", cleanUpFive));		
 		
 	}
 

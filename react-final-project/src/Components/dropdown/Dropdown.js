@@ -5,7 +5,9 @@ class Dropdown extends React.Component {
 
   constructor(props) {
   super(props)
-  this.state = {opened: false};
+    this.state = {
+      opened: false
+    };
   }
 
   onClick = () => {
@@ -18,7 +20,7 @@ class Dropdown extends React.Component {
     return(
       <div>
       <DDToggler onClick = {this.onClick} />
-       <DDList opened = {this.state.opened}></DDList>
+       <DDList opened = {this.state.opened} updateCurrentLocation={this.props.updateCurrentLocation} currentLocation={this.props.currentLocation} />
         </div>
     )
   }
@@ -31,14 +33,12 @@ const DDToggler = (props) => {
 const DDList = (props) => {
   return (<div className = {props.opened ? 'opened' : 'closed'}>
         <div className="menu__items">
-            <h3 className="menu__item">Profile</h3>
-            <h3 className="menu__item">Rewards</h3>
-            <h3 className="menu__item">CleanUps</h3>
-            <h3 className="menu__item">Maps</h3>
-            <h3 className="menu__item">History</h3>
-            <h3 className="menu__item">Leaderboard</h3>
-            <h3 className="menu__item">About</h3>
-            <h3 className="menu__item">Logout</h3>
+            <h3 onClick={() => props.updateCurrentLocation('user')}className="menu__item">Profile</h3>
+            <h3 onClick={() => props.updateCurrentLocation('precleanups')}className="menu__item">CleanUps</h3>
+            <h3 onClick={() => props.updateCurrentLocation('mapcontainer')}className="menu__item">Map</h3>
+            <h3 onClick={() => props.updateCurrentLocation('postcleanups')}className="menu__item">History</h3>
+            <h3 onClick={() => props.updateCurrentLocation('users')}className="menu__item">Leaderboard</h3>
+            <h3 onClick={() => props.updateCurrentLocation('landingpage')} className="menu__item">Logout</h3>
         </div> 
     </div>)
 }
