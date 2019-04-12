@@ -36,7 +36,6 @@ class PreCleanUpCommentForm extends Component {
             <form className="preCleanUpCommentForm" onSubmit={this.handleSubmit}>
                 <h2>Add A Comment</h2>
                 <label>
-                    Your Comment:
                     <input 
                         className="preCleanUpCommentForm__content"
                         name="cleanUpCommentContent"
@@ -45,7 +44,7 @@ class PreCleanUpCommentForm extends Component {
                         value={this.state.cleanUpCommentContent}
                         onChange={this.handleInputChange} />
                 </label>
-               <input type="submit" value="Add Comment" />
+               <input className="commentForm__button" type="submit" value="Add Comment" />
             </form>
         )
     }

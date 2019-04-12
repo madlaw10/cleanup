@@ -11,18 +11,20 @@
 .postCleanUp-feed-card {
     background-color: white;
     box-shadow: 2px 2px 5px black;
-    padding: 20px;
-    margin-bottom: 10px;
+    padding: 10px 20px 20px 20px;
+    margin-bottom: -40px;
+    margin-top: 80px;
 }
 
 .postCleanUp__header {
     align-items: center;
-    border-bottom: 1px solid gray;
     display: flex;
-    padding: 10px;
+    padding: 10px 10px 10px 5px;
+    margin-bottom: 10px;
 }
 
 .postCleanUp__image {
+    box-shadow: 1px 1px 5px black;
     height: auto;
     width: 100%;
 }
@@ -48,30 +50,39 @@
 
 .postCleanUp-feed__button-icon-down {
     font-size: 35px;
-    padding: 10px;
-    margin-top: 13px;
+    padding: 10px 10px 10px 0px;
+}
+
+.postCleanUp-feed__button-icon-down:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .postCleanUp-feed__button-icon-up {
     font-size: 35px;
     padding: 10px;
-    margin-bottom: 13px;
+}
+
+.postCleanUp-feed__button-icon-up:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .postCleanUp__vote-container {
     display: flex;
-    padding: 10px;
+    margin-left: -5px;
+    
 }
 
 .postCleanUp__votes {
     font-weight: bolder;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 17px;
 }
 
 .postCleanUp__caption {
     font-size: 20px;
-    padding: 5px;
+    padding: 10px 5px 5px 0px;
 }
 
 .postCleanUp__date {
@@ -125,11 +136,10 @@
 /* Accordion CSS START */
 
 .tab {
-    margin-bottom: 1px;
     overflow: hidden;
+    padding-top: 90px;
     position: relative;
     text-align: center;
-    padding-top: 90px;
     width: 100%;
   }
 
@@ -142,6 +152,15 @@
     line-height: 3;
     padding: 10px;
     width: 100%;
+  }
+
+  .postCleanUp-toggle__button {
+    background: #01bc3d;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
   }
 
   .toggle__checkbox {
@@ -186,4 +205,29 @@
   .tab input[type=radio]:checked + label::after {
     transform: rotateX(180deg);
   }
+
+  .cleanUpCommentForm__content {
+    border: 1px solid black;
+    padding: 10px;
+    margin-right: 2%;
+    margin-bottom: 15px;
+    width: 80%;
+  }
+
+  .commentForm__button {
+    background: #01bc3d;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    width: 15%;
+  }
+
+  .comment__content {
+      padding: 10px 10px 10px 0px;
+
+  }
+
+  
   

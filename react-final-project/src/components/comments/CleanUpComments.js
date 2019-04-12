@@ -6,6 +6,7 @@ import PreCleanUpCommentForm from './PreCleanUpCommentForm'
 export default (props) => {
     return (
       <div>
+      <CleanUpCommentForm addCleanUpComment = {props.addCleanUpComment} cleanUpId = {props.cleanUpId} />
       {props.cleanUpComments
       .map(cleanUpComment => <CleanUpComment key={cleanUpComment.id} cleanUpComment={cleanUpComment} />)}
       {props.currentLocation === "postcleanup" && <PostCleanUpCommentForm addPostCleanUpComment = {props.addPostCleanUpComment} cleanUpId = {props.cleanUpId} />}

@@ -13,25 +13,26 @@ export default (props) => {
                         <h3 className="postCleanUp__location">{props.postCleanUp.location} {props.postCleanUp.id}</h3>
                     </div>
                     <img className="postCleanUp__image" src={props.postCleanUp.image} alt="CleanUp" />
+                    <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
                     
                     {props.currentLocation === "postcleanups" &&
                     <div className="postCleanUp__vote-container">
                         <button className="postCleanUp-feed__button" type="button" onClick={() => props.voteDown(postCleanUpId)}>
                             <i className="material-icons-outlined postCleanUp-feed__button-icon-down">
-                                thumb_down
+                                arrow_downward
                         </i>
                         </button>
                         <p className="postCleanUp__votes">{props.postCleanUp.count}</p>
                         <button className="postCleanUp-feed__button" type="button" onClick={() => props.voteUp(postCleanUpId)}>
                             <i className="material-icons-outlined postCleanUp-feed__button-icon-up">
-                                thumb_up
+                                arrow_upward
                         </i>
                         </button>
                     </div>
                     }
 
-                    <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
                     {props.currentLocation === "postcleanups" && <button className="postCleanUp-toggle__button" onClick={() => props.getPostCleanUp(postCleanUpId)}>View More</button>}
+                    
                     <div>
                         {props.currentLocation === "postcleanup" && <CleanUpComments cleanUpComments={cleanUpComments} addPostCleanUpComment = {props.addPostCleanUpComment} cleanUpId = {postCleanUpId} currentLocation={props.currentLocation}/>}
                     </div>

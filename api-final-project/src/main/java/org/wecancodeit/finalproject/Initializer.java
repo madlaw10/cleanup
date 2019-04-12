@@ -35,7 +35,7 @@ public class Initializer implements CommandLineRunner{
 		User userThree = userRepo.save(new User("nate", "https://files.slack.com/files-pri/T14LST83D-FHXM8020N/bitmoji-20190411024503.png"));
 		User userFour = userRepo.save(new User("eythan", "https://files.slack.com/files-pri/T14LST83D-FHMFRA16V/file.jpg"));
 		PreCleanUp cleanUpZero = preCleanUpRepo.save(new PreCleanUp(LocalDate.now(), "locationZero", "descriptionZero"));
-		PostCleanUp cleanUpOne = postCleanUpRepo.save(new PostCleanUp("https://static.boredpanda.com/blog/wp-content/uploads/2019/03/trashtag-challenge-people-clean-surroundings-108-5c8659a6653f5__700.jpg", "locationOne", "captionOne"));
+		PostCleanUp cleanUpOne = postCleanUpRepo.save(new PostCleanUp("https://static.boredpanda.com/blog/wp-content/uploads/2019/03/trashtag-challenge-people-clean-surroundings-108-5c8659a6653f5__700.jpg", "locationOne", "River side clean up when well with great friends!"));
 		PostCleanUp cleanUpTwo = postCleanUpRepo.save(new PostCleanUp("https://media.globalcitizen.org/thumbnails/e4/15/e415fee3-e28a-4d6d-9ce1-ba303d3d5dab/screen_shot_2019-03-11_at_53455_pm.png__1500x670_q85_crop_subsampling-2.png", "locationTwo", "captionTwo"));
 		PostCleanUp cleanUpThree = postCleanUpRepo.save(new PostCleanUp("https://static.boredpanda.com/blog/wp-content/uploads/2019/03/trashtag-challenge-people-clean-surroundings-104-5c865855c801d__700.jpg", "locationThree", "captionThree"));
 		PostCleanUp cleanUpFour = postCleanUpRepo.save(new PostCleanUp("https://pbs.twimg.com/profile_images/933918958/cuw_logo_en_200x200_400x400.jpg", "locationFour", "captionFour"));
