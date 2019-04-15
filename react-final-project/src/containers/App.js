@@ -113,7 +113,7 @@ class App extends Component {
   render() {
     return (
 
-      <div>
+      <div className="body__main">
         <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getUser = {this.getUser} />
 
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
