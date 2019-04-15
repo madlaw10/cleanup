@@ -50,8 +50,7 @@
     background-color: white;
     box-shadow: 2px 2px 5px black;
     padding: 10px 20px 20px 20px;
-    margin-top: 40px;
-    margin: 40px 10% 0px 10%;
+    margin: 10px 10% 0px 10%;
     min-width: 340px;
 }
 
@@ -99,12 +98,12 @@
 
 @media only screen and (min-width: 700px) {
     .userLogin__form {
-        margin: 40px 25% 0px 25%;
+        margin: 10px 25% 0px 25%;
     }
 }
 
 @media only screen and (min-width: 1300px) {
     .userLogin__form {
-        margin: 40px 35% 0px 35%;
+        margin: 10px 35% 0px 35%;
     }
 }
