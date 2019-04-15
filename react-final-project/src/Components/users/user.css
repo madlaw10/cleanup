@@ -1,10 +1,19 @@
-.user {
+.landing-page {
+    padding-bottom: 50%;
+}
+
+.users-leaderboard {
+    padding: 5px;
+    position:relative;
+    top: 10px;
+}
+
+.users-leaderboard-card {
     background-color: white;
     box-shadow: 2px 2px 5px black;
     margin-top: 20px;
     padding: 10px 20px 20px 20px;
 }
-
 
 .user__userName {
     font-size: 20px;
@@ -22,4 +31,71 @@
 .user__pointCount {
     font-size: 20px;
     padding: 10px 5px 5px 0px;
+}
+
+.userLogin {
+    display: flex;
+    flex-direction: column;
+}
+
+.userLogin__form {
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+    padding: 10px 20px 20px 20px;
+    margin-top: 40px;
+    margin: 40px 10% 0px 10%;
+}
+
+.userLogin__form h2 {
+    padding: 10px 0px 10px 0px;
+}
+
+.userLogin__form h6 {
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid gray;
+}
+
+.userLogin__form label {
+    padding: 10px 0px 10px 0px;
+    font-size: 20px;
+}
+
+.userLogin__btn {
+    background: #01bc3d;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.userLogin__btn:hover {
+    background: #0a720f;
+}
+
+.userLogin__userName,
+.userLogin__password {
+    flex: 1;
+    height: 40px;
+    margin-top: 10px;
+
+    padding-left: 1%;
+    padding-right: 1%;
+
+}
+
+
+@media only screen and (min-width: 700px) {
+    .userLogin__form {
+        margin: 40px 25% 0px 25%;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .userLogin__form {
+        margin: 40px 35% 0px 35%;
+    }
 }

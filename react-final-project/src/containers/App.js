@@ -112,7 +112,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="body__main">
         <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} />
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
         {this.state.currentLocation === "mapcontainer" && <MapContainer />}
@@ -130,10 +130,11 @@ class App extends Component {
           {this.state.currentLocation === "users" && <Users users={this.state.users} currentLocation={this.state.currentLocation} />}
 
           {this.state.currentLocation === "user" && <User user={this.state.user} currentLocation={this.state.currentLocation} />}
+        
 
         </div>
 
-        {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} />}
+          {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} />}
 
       </div>
     )

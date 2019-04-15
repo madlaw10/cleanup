@@ -33,22 +33,25 @@ class UserLogin extends Component {
 
     render () {
         return (
-         <form className="userLogin" onSubmit={this.handleSubmit}>
-            <label htmlFor="userName-input" className="form__label">
-                Username:
-            </label>
-                <input 
-                    className="userLogin__userName"
-                    name="userName"
-                    id="userName-input"
-                    type="text"
-                    autoComplete="userName"
-                    placeholder="Username or Email"
-                    value={this.state.userName}
-                    onChange={this.handleInputChange} />
-                <label htmlFor="password-input" className="form__label">
-                    Password:
-                </label>
+            <div className="userLogin__form">
+                <h2>Log in</h2>
+                <h6>No account?  <a href="">Register</a></h6>
+                <form className="userLogin" onSubmit={this.handleSubmit}>
+                    <label htmlFor="userName-input" className="form__label">
+                        Username:
+                    </label>
+                    <input 
+                        className="userLogin__userName"
+                        name="userName"
+                        id="userName-input"
+                        type="text"
+                        autoComplete="userName"
+                        placeholder="Username or Email"
+                        value={this.state.userName}
+                        onChange={this.handleInputChange} />
+                    <label htmlFor="password-input" className="form__label">
+                        Password:
+                    </label>
                     <input 
                         className="userLogin__password"
                         name="password"
@@ -62,6 +65,7 @@ class UserLogin extends Component {
                         className="userLogin__btn"
                         type="submit" value="Login" />
                 </form>
+            </div>
         )
     }
 }
