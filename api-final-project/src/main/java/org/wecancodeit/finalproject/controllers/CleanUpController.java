@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.wecancodeit.finalproject.models.PostCleanUp;
 import org.wecancodeit.finalproject.models.PreCleanUp;
+import org.wecancodeit.finalproject.models.User;
 import org.wecancodeit.finalproject.repositories.PostCleanUpRepository;
 import org.wecancodeit.finalproject.repositories.PreCleanUpRepository;
+import org.wecancodeit.finalproject.repositories.UserRepository;
 
 
 @CrossOrigin
@@ -29,6 +31,8 @@ public class CleanUpController {
 	PostCleanUpRepository postCleanUpRepo;
 	@Resource
 	PreCleanUpRepository preCleanUpRepo;
+	@Resource
+	UserRepository userRepo;
 	
 	@GetMapping("/postcleanups")
 	public Collection<PostCleanUp> getPostCleanUps() {
@@ -56,7 +60,8 @@ public class CleanUpController {
 		String image = newPostCleanUp.getString("postCleanUpPhoto");
 		String location = newPostCleanUp.getString("postCleanUpLocation");
 		String caption = newPostCleanUp.getString("postCleanUpCaption");
-		postCleanUpRepo.save(new PostCleanUp(image, location, caption));
+		User user = userRepo.findById(Long.parseLong(newPostCleanUp.getString("postCleanUpUser"))).get();
+		postCleanUpRepo.save(new PostCleanUp(image, location, caption, user));
 		return (Collection<PostCleanUp>)postCleanUpRepo.findAll();
 	} 
 	

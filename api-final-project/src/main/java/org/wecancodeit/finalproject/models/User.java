@@ -1,9 +1,13 @@
 package org.wecancodeit.finalproject.models;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -14,6 +18,8 @@ public class User {
 	@Lob
 	private String avatar;
 	private int pointCount;
+	@OneToMany(mappedBy="user")
+	private Collection <PostCleanUp> postCleanUps;
 	
 	public User() {
 		
@@ -23,6 +29,7 @@ public class User {
 		this.pointCount = 1;
 		this.avatar = avatar;
 		this.userName = userName;
+		this.postCleanUps = new ArrayList<PostCleanUp>();
 	}
 
 	public Long getId() {
@@ -41,6 +48,10 @@ public class User {
 	public String getAvatar() {
 		return avatar;
 	}
+	
+	public Collection<PostCleanUp> getPostCleanUps() {
+		return postCleanUps;
+	}
 
 	public void increasePointCount() {
 		pointCount++;
@@ -52,7 +63,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", avatar=" + avatar + ", pointCount=" + pointCount + "]";
+		return "User [id=" + id + ", userName=" + userName + ", avatar=" + avatar + ", pointCount=" + pointCount
+				+ ", postCleanUp=" + postCleanUps + "]";
 	}
 	
 	
