@@ -8,8 +8,8 @@ export default (props) => {
       <div>
         {props.cleanUpComments
         .map(cleanUpComment => <CleanUpComment key={cleanUpComment.id} cleanUpComment={cleanUpComment} />)}
-        {props.currentLocation === "postcleanup" && <PostCleanUpCommentForm addPostCleanUpComment = {props.addPostCleanUpComment} cleanUpId = {props.cleanUpId} />}
-        {props.currentLocation === "precleanup" && <PreCleanUpCommentForm addPreCleanUpComment = {props.addPreCleanUpComment} cleanUpId = {props.cleanUpId} />}
+        {props.currentLocation === "postcleanup" && <PostCleanUpCommentForm addPostCleanUpComment = {props.addPostCleanUpComment} cleanUpId = {props.cleanUpId} user = {props.user} />}
+        {props.currentLocation === "precleanup" && <PreCleanUpCommentForm addPreCleanUpComment = {props.addPreCleanUpComment} cleanUpId = {props.cleanUpId} user = {props.user} />}
       </div>
     )
 }
