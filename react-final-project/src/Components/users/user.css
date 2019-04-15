@@ -1,5 +1,13 @@
+.login__logo {
+    height: auto;
+    width: 200px;
+}
+
 .landing-page {
-    padding-bottom: 50%;
+    padding-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .users-leaderboard {
@@ -44,6 +52,7 @@
     padding: 10px 20px 20px 20px;
     margin-top: 40px;
     margin: 40px 10% 0px 10%;
+    min-width: 340px;
 }
 
 .userLogin__form h2 {
