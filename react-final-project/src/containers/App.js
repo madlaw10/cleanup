@@ -70,8 +70,8 @@ class App extends Component {
     })
   }
 
-  addPostCleanUp = (postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption) => {
-    let newPostCleanUp = { postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption }
+  addPostCleanUp = (postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption, postCleanUpUser) => {
+    let newPostCleanUp = { postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption, postCleanUpUser }
     api.postRequest('/cleanups/postcleanups/add', newPostCleanUp, postCleanUps =>
           this.setState({ postCleanUps })
     )
@@ -112,14 +112,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="body__main">
-        <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} />
+
+      <div>
+        <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getUser = {this.getUser} />
+
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
         {this.state.currentLocation === "mapcontainer" && <MapContainer />}
 
         <div className="body__container">
 
-          {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} voteUp = {this.voteUp} voteDown = {this.voteDown} />}
+          {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} voteUp = {this.voteUp} voteDown = {this.voteDown}  user = {this.state.user} />}
 
           {this.state.currentLocation === "postcleanup" && <PostCleanUp postCleanUp={this.state.postCleanUp} currentLocation={this.state.currentLocation} addPostCleanUpComment = {this.addPostCleanUpComment} />}
 
@@ -127,10 +129,11 @@ class App extends Component {
 
           {this.state.currentLocation === "precleanup" && <PreCleanUp preCleanUp={this.state.preCleanUp} currentLocation={this.state.currentLocation} addPreCleanUpComment = {this.addPreCleanUpComment} />}
 
-          {this.state.currentLocation === "users" && <Users users={this.state.users} currentLocation={this.state.currentLocation} />}
+          {this.state.currentLocation === "users" && <Users users={this.state.users} currentLocation={this.state.currentLocation} getPostCleanUp={this.getPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} />}
 
-          {this.state.currentLocation === "user" && <User user={this.state.user} currentLocation={this.state.currentLocation} />}
-        
+
+          {this.state.currentLocation === "user" && <User user={this.state.user} currentLocation={this.state.currentLocation} getPostCleanUp={this.getPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} />}
+
 
         </div>
 

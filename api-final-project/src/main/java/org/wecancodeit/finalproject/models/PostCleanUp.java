@@ -4,31 +4,36 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class PostCleanUp extends CleanUp {
 
-	// A user needs to be able to "hold" their clean-up
 
-	LocalDateTime postDate;
+	private LocalDateTime postDate;
 	// Q: Uploading and supporting local photo files
 	// Collection of images?
 	@Lob
-	String image;
+	private String image;
 	@Lob
-	String caption;
-	// Make ratings/points its own entity
+	private String caption;
 	private int count;
+	@ManyToOne
+	@JsonIgnore
+	private User user;
 
 	public PostCleanUp() {
 	}
 
-	public PostCleanUp(String image, String location, String caption) {
+	public PostCleanUp(String image, String location, String caption, User user) {
 		super(location);
 		this.postDate = LocalDateTime.now();
 		this.image = image;
 		this.caption = caption;
 		this.count = 1;
+		this.user = user;
 	}
 
 	public LocalDateTime getPostDate() {
@@ -46,6 +51,11 @@ public class PostCleanUp extends CleanUp {
 	public int getCount() {
 		return count;
 	}
+	
+
+	public User getUser() {
+		return user;
+	}
 
 	public void increaseCount() {
 		count++;
@@ -62,8 +72,8 @@ public class PostCleanUp extends CleanUp {
 	@Override
 	public String toString() {
 		return "PostCleanUp [postDate=" + postDate + ", image=" + image + ", caption=" + caption + ", count=" + count
-				+ ", getId()=" + getId() + ", getLocation()=" + getLocation() + ", getComments()=" + getComments()
-				+ "]";
+				+ ", user=" + user + ", getId()=" + getId() + ", getLocation()=" + getLocation() + ", getComments()="
+				+ getComments() + "]";
 	}
 
 }
