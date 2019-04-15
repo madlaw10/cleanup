@@ -17,7 +17,6 @@ import org.wecancodeit.finalproject.repositories.UserRepository;
 @RequestMapping("/users")
 public class UserController {
 	
-	// Need a 
 	
 	@Resource
 	UserRepository userRepo;

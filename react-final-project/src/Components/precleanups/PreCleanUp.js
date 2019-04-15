@@ -13,7 +13,7 @@ return(
             <p className="preCleanUp__description">{props.preCleanUp.description}</p>
             {props.currentLocation === "precleanups" && <button className="preCleanUp-toggle__button" onClick={() => props.getPreCleanUp(preCleanUpId)}>View More</button>}
             <div>
-                {props.currentLocation === "precleanup" && <CleanUpComments cleanUpComments={cleanUpComments} addPreCleanUpComment = {props.addPreCleanUpComment} cleanUpId = {preCleanUpId} currentLocation={props.currentLocation}/>}
+                {props.currentLocation === "precleanup" && <CleanUpComments cleanUpComments={cleanUpComments} addPreCleanUpComment = {props.addPreCleanUpComment} cleanUpId = {preCleanUpId} currentLocation={props.currentLocation} user = {props.user}/>}
             </div>
         </div>
     </div>

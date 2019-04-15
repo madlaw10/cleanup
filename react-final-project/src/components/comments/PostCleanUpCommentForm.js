@@ -6,7 +6,8 @@ class PostCleanUpCommentForm extends Component {
         super(props)
         this.state = {
             cleanUpCommentContent: '',
-            cleanUpId: props.cleanUpId
+            cleanUpId: props.cleanUpId,
+            cleanUpCommentUser: props.user.id
         };
 
         this.baseState=this.state;
@@ -27,7 +28,7 @@ class PostCleanUpCommentForm extends Component {
     
     handleSubmit(event) {
         event.preventDefault();
-        this.props.addPostCleanUpComment(this.state.cleanUpCommentContent, this.state.cleanUpId);
+        this.props.addPostCleanUpComment(this.state.cleanUpCommentContent, this.state.cleanUpId, this.state.cleanUpCommentUser);
         this.setState(this.baseState);
     }
 

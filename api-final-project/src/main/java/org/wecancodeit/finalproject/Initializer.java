@@ -53,16 +53,16 @@ public class Initializer implements CommandLineRunner{
 
 
 		// Comments
-		commentRepo.save(new CleanUpComment("This is awesome!!  #trashtag", cleanUpOne));
-		commentRepo.save(new CleanUpComment("Looks incredible, let's keep CBUS clean!", cleanUpTwo));
-		commentRepo.save(new CleanUpComment("Wow!!", cleanUpThree));
-		commentRepo.save(new CleanUpComment(":heart: this!!!  #trashtag #cleanUp", cleanUpFour));
-		commentRepo.save(new CleanUpComment("Great work guys!", cleanUpFive));		
-		commentRepo.save(new CleanUpComment("This is awesome!!  #trashtag", preCleanUpOne));
-		commentRepo.save(new CleanUpComment("Looks incredible, let's keep CBUS clean!", preCleanUpTwo));
-		commentRepo.save(new CleanUpComment("Wow!!", preCleanUpThree));
-		commentRepo.save(new CleanUpComment(":heart: this!!!  #trashtag #cleanUp", preCleanUpFour));
-		commentRepo.save(new CleanUpComment("Great work guys!", preCleanUpZero));
+		commentRepo.save(new CleanUpComment("This is awesome!!  #trashtag", userOne, cleanUpOne));
+		commentRepo.save(new CleanUpComment("Looks incredible, let's keep CBUS clean!", userTwo, cleanUpTwo));
+		commentRepo.save(new CleanUpComment("Wow!!", userThree, cleanUpThree));
+		commentRepo.save(new CleanUpComment(":heart: this!!!  #trashtag #cleanUp", userFour, cleanUpFour));
+		commentRepo.save(new CleanUpComment("Great work guys!", userFive, cleanUpFive));		
+		commentRepo.save(new CleanUpComment("This is awesome!!  #trashtag", userOne, preCleanUpOne));
+		commentRepo.save(new CleanUpComment("Looks incredible, let's keep CBUS clean!", userTwo, preCleanUpTwo));
+		commentRepo.save(new CleanUpComment("Wow!!", userThree, preCleanUpThree));
+		commentRepo.save(new CleanUpComment(":heart: this!!!  #trashtag #cleanUp", userFour, preCleanUpFour));
+		commentRepo.save(new CleanUpComment("Great work guys!", userFive, preCleanUpZero));
 	}
 
 }

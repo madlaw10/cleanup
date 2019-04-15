@@ -14,8 +14,8 @@ public class CleanUpComment extends Comment {
 	
 	public CleanUpComment() {}
 	
-	public CleanUpComment(String content, CleanUp cleanUp) {
-		super(content);
+	public CleanUpComment(String content, User user, CleanUp cleanUp) {
+		super(content, user);
 		this.cleanUp = cleanUp;
 	}
 	public CleanUp getCleanUp() {
@@ -24,7 +24,8 @@ public class CleanUpComment extends Comment {
 	
 	@Override
 	public String toString() {
-		return "CleanUpComment [cleanUp=" + cleanUp + ", getId()=" + getId() + ", getContent()=" + getContent() + "]";
+		return "CleanUpComment [cleanUp=" + cleanUp + ", getId()=" + getId() + ", getContent()=" + getContent()
+				+ ", getUser()=" + getUser() + "]";
 	}
 	
 	

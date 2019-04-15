@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.wecancodeit.finalproject.models.CleanUp;
 import org.wecancodeit.finalproject.models.CleanUpComment;
 import org.wecancodeit.finalproject.models.Comment;
+import org.wecancodeit.finalproject.models.User;
 import org.wecancodeit.finalproject.repositories.CommentRepository;
 import org.wecancodeit.finalproject.repositories.PostCleanUpRepository;
 import org.wecancodeit.finalproject.repositories.PreCleanUpRepository;
+import org.wecancodeit.finalproject.repositories.UserRepository;
 
 @CrossOrigin
 @RestController
@@ -30,6 +32,8 @@ public class CommentController {
 	
 	@Resource
 	CommentRepository commentRepo;
+	@Resource
+	UserRepository userRepo;
 	
 	@GetMapping("/{id}")
 	public Comment getSingleComment(@PathVariable Long id) {
@@ -40,8 +44,9 @@ public class CommentController {
 	public CleanUp addPostCleanUpComment(@RequestBody String body)throws JSONException {
 	JSONObject newCleanUpComment = new JSONObject(body);
 	String content = newCleanUpComment.getString("cleanUpCommentContent");
+	User user = userRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpCommentUser"))).get();
 	CleanUp cleanUp = postCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))).get();
-	commentRepo.save(new CleanUpComment(content, cleanUp));	
+	commentRepo.save(new CleanUpComment(content, user, cleanUp));	
 		return cleanUp;
 	}
 	
@@ -49,8 +54,9 @@ public class CommentController {
 	public CleanUp addPreCleanUpComment(@RequestBody String body)throws JSONException {
 	JSONObject newCleanUpComment = new JSONObject(body);
 	String content = newCleanUpComment.getString("cleanUpCommentContent");
+	User user = userRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpCommentUser"))).get();
 	CleanUp cleanUp = preCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))).get();
-	commentRepo.save(new CleanUpComment(content, cleanUp));	
+	commentRepo.save(new CleanUpComment(content, user, cleanUp));	
 		return cleanUp;
 	}
 }

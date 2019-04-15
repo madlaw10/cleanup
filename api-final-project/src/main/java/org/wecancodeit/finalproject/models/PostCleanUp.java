@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 public class PostCleanUp extends CleanUp {
 
@@ -21,7 +19,6 @@ public class PostCleanUp extends CleanUp {
 	private String caption;
 	private int count;
 	@ManyToOne
-	@JsonIgnore
 	private User user;
 
 	public PostCleanUp() {
