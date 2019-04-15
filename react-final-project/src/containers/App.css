@@ -1,14 +1,42 @@
-.body__container {
-    padding: 80px 0px 0px 0px;
-    
+* {
+font-family: 'Montserrat', sans-serif;
+margin: 0;
+padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+a {
+text-decoration: none;
+}
+  
+body {
+    background-color: #d5edd8;
+}
+
+.body__container {
+    background-color: #d5edd8;
+    padding: 80px 0px 0px 0px;
+    margin: 0px 0px 40px 0px;
+}
+
+.body__main {
+    background-image: url("https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/background.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: visible;
+}
 
 @media only screen and (min-width: 700px) {
     .body__container {
         padding-left: 15%;
         padding-right: 15%;
     }
+
 }
 
 @media only screen and (min-width: 1300px) {
@@ -16,8 +44,4 @@
         padding-left: 25%;
         padding-right: 25%;
     }
-}
-
-body {
-    background-color: #d5edd8;
 }

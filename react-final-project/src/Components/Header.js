@@ -11,7 +11,7 @@ export default (props) => {
             </div>
 
             <div className="nav">
-                <h3 onClick={() => props.updateCurrentLocation('precleanups')} className="nav__item">CleanUps</h3>
+                <h3 onClick={() => props.updateCurrentLocation('precleanups')} className="nav__item">Cleanups</h3>
                 <h3 onClick={() => props.updateCurrentLocation('mapcontainer')} className="nav__item">Map</h3>
                 <h3 onClick={() => props.updateCurrentLocation('postcleanups')} className="nav__item">History</h3>
             </div>
