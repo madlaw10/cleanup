@@ -20,7 +20,7 @@ class Dropdown extends React.Component {
     return(
       <div>
       <DDToggler onClick = {this.onClick} />
-       <DDList opened = {this.state.opened} updateCurrentLocation={this.props.updateCurrentLocation} currentLocation={this.props.currentLocation} />
+       <DDList opened = {this.state.opened} updateCurrentLocation={this.props.updateCurrentLocation} currentLocation={this.props.currentLocation} getUser = {this.props.getUser} user = {this.props.user} />
         </div>
     )
   }
@@ -33,7 +33,7 @@ const DDToggler = (props) => {
 const DDList = (props) => {
   return (<div className = {props.opened ? 'opened' : 'closed'}>
         <div className="menu__items">
-            <h3 onClick={() => props.updateCurrentLocation('user')}className="menu__item">Profile</h3>
+            <h3 onClick={() => props.getUser(props.user.userName)}className="menu__item">Profile</h3>
             <h3 onClick={() => props.updateCurrentLocation('precleanups')}className="menu__item">CleanUps</h3>
             <h3 onClick={() => props.updateCurrentLocation('mapcontainer')}className="menu__item">Map</h3>
             <h3 onClick={() => props.updateCurrentLocation('postcleanups')}className="menu__item">History</h3>

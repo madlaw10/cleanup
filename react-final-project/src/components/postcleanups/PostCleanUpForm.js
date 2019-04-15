@@ -7,7 +7,8 @@ class PostCleanUpForm extends Component {
         this.state = {
             postCleanUpPhoto: '',
             postCleanUpLocation: '',
-            postCleanUpCaption: ''
+            postCleanUpCaption: '',
+            postCleanUpUser: props.user.id
         };
 
         this.baseState=this.state;
@@ -28,7 +29,7 @@ class PostCleanUpForm extends Component {
     
     handleSubmit(event) {
         event.preventDefault();
-        this.props.addPostCleanUp(this.state.postCleanUpPhoto, this.state.postCleanUpLocation, this.state.postCleanUpCaption);
+        this.props.addPostCleanUp(this.state.postCleanUpPhoto, this.state.postCleanUpLocation, this.state.postCleanUpCaption, this.state.postCleanUpUser);
         this.setState(this.baseState);
     }
 

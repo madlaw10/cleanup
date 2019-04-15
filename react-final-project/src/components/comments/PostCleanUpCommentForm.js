@@ -34,7 +34,7 @@ class PostCleanUpCommentForm extends Component {
     render () {
         return (
             <form className="cleanUpCommentForm" onSubmit={this.handleSubmit}>
-                <label for="content__input"></label>
+                <label htmlFor="content__input"></label>
                     <input 
                         className="cleanUpCommentForm__content"
                         name="cleanUpCommentContent"

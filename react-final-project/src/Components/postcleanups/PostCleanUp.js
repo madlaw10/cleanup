@@ -14,7 +14,9 @@ export default (props) => {
                     </div>
                     <img className="postCleanUp__image" src={props.postCleanUp.image} alt="CleanUp" />
                     <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
-                    
+                    {!(props.currentLocation === "postcleanups") &&
+                    <p className="postCleanUp__votes">User Votes: {props.postCleanUp.count}</p>
+                    }
                     {props.currentLocation === "postcleanups" &&
                     <div className="postCleanUp__vote-container">
                         <button className="postCleanUp-feed__button" type="button" onClick={() => props.voteDown(postCleanUpId)}>
@@ -31,7 +33,7 @@ export default (props) => {
                     </div>
                     }
 
-                    {props.currentLocation === "postcleanups" && <button className="postCleanUp-toggle__button" onClick={() => props.getPostCleanUp(postCleanUpId)}>View More</button>}
+                    {!(props.currentLocation === "postcleanup") && <button className="postCleanUp-toggle__button" onClick={() => props.getPostCleanUp(postCleanUpId)}>View More</button>}
                     
                     <div>
                         {props.currentLocation === "postcleanup" && <CleanUpComments cleanUpComments={cleanUpComments} addPostCleanUpComment = {props.addPostCleanUpComment} cleanUpId = {postCleanUpId} currentLocation={props.currentLocation}/>}
