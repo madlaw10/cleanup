@@ -45,6 +45,8 @@ public class CommentController {
 	JSONObject newCleanUpComment = new JSONObject(body);
 	String content = newCleanUpComment.getString("cleanUpCommentContent");
 	User user = userRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpCommentUser"))).get();
+	user.increasePointCount(5);
+	userRepo.save(user);
 	CleanUp cleanUp = postCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))).get();
 	commentRepo.save(new CleanUpComment(content, user, cleanUp));	
 		return cleanUp;
@@ -55,6 +57,8 @@ public class CommentController {
 	JSONObject newCleanUpComment = new JSONObject(body);
 	String content = newCleanUpComment.getString("cleanUpCommentContent");
 	User user = userRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpCommentUser"))).get();
+	user.increasePointCount(5);
+	userRepo.save(user);
 	CleanUp cleanUp = preCleanUpRepo.findById(Long.parseLong(newCleanUpComment.getString("cleanUpId"))).get();
 	commentRepo.save(new CleanUpComment(content, user, cleanUp));	
 		return cleanUp;

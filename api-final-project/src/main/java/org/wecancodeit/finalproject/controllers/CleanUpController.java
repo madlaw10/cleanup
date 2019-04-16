@@ -61,6 +61,8 @@ public class CleanUpController {
 		String location = newPostCleanUp.getString("postCleanUpLocation");
 		String caption = newPostCleanUp.getString("postCleanUpCaption");
 		User user = userRepo.findById(Long.parseLong(newPostCleanUp.getString("postCleanUpUser"))).get();
+		user.increasePointCount(10);
+		userRepo.save(user);
 		postCleanUpRepo.save(new PostCleanUp(image, location, caption, user));
 		return (Collection<PostCleanUp>)postCleanUpRepo.OrderByCountDesc();
 	} 
@@ -72,24 +74,34 @@ public class CleanUpController {
 		String location = newPreCleanUp.getString("preCleanUpLocation");
 		String description = newPreCleanUp.getString("preCleanUpDescription");
 		User user = userRepo.findById(Long.parseLong(newPreCleanUp.getString("preCleanUpUser"))).get();
+		user.increasePointCount(10);
+		userRepo.save(user);
 		preCleanUpRepo.save(new PreCleanUp(scheduledDate, location, description, user));
 		return (Collection<PreCleanUp>)preCleanUpRepo.OrderByScheduledDateAsc();
 	} 
 	
 	@PostMapping("/postcleanups/{id}/voteup")
-	public Collection<PostCleanUp> voteUp(@PathVariable Long id) throws JSONException {
+	public Collection<PostCleanUp> voteUp(@PathVariable Long id, @RequestBody String body) throws JSONException {
+		JSONObject postCleanUpUser = new JSONObject(body);
 		PostCleanUp postCleanUpToVoteUp = postCleanUpRepo.findById(id).get();
 		postCleanUpToVoteUp.increaseCount();
 		postCleanUpRepo.save(postCleanUpToVoteUp);
-		return (Collection<PostCleanUp>)postCleanUpRepo.findAll();
+		User user = userRepo.findById(Long.parseLong(postCleanUpUser.getString("cleanUpUserId"))).get();
+		user.increasePointCount(1);
+		userRepo.save(user);
+		return (Collection<PostCleanUp>)postCleanUpRepo.OrderByCountDesc();
 	}
 	
 	@PostMapping("/postcleanups/{id}/votedown")
-	public Collection<PostCleanUp> voteDown(@PathVariable Long id) throws JSONException {
+	public Collection<PostCleanUp> voteDown(@PathVariable Long id, @RequestBody String body) throws JSONException {
+		JSONObject postCleanUpUser = new JSONObject(body);
 		PostCleanUp postCleanUpToVoteDown = postCleanUpRepo.findById(id).get();
 		postCleanUpToVoteDown.decreaseCount();
 		postCleanUpRepo.save(postCleanUpToVoteDown);
-		return (Collection<PostCleanUp>)postCleanUpRepo.findAll();
+		User user = userRepo.findById(Long.parseLong(postCleanUpUser.getString("cleanUpUserId"))).get();
+		user.decreasePointCount(1);
+		userRepo.save(user);
+		return (Collection<PostCleanUp>)postCleanUpRepo.OrderByCountDesc();
 	}
 
 }
