@@ -36,7 +36,7 @@ public class CleanUpController {
 	
 	@GetMapping("/postcleanups")
 	public Collection<PostCleanUp> getPostCleanUps() {
-		return (Collection<PostCleanUp>)postCleanUpRepo.findAll();
+		return (Collection<PostCleanUp>)postCleanUpRepo.OrderByCountDesc();
 	}
 	
 	@GetMapping("/precleanups")
@@ -62,16 +62,17 @@ public class CleanUpController {
 		String caption = newPostCleanUp.getString("postCleanUpCaption");
 		User user = userRepo.findById(Long.parseLong(newPostCleanUp.getString("postCleanUpUser"))).get();
 		postCleanUpRepo.save(new PostCleanUp(image, location, caption, user));
-		return (Collection<PostCleanUp>)postCleanUpRepo.findAll();
+		return (Collection<PostCleanUp>)postCleanUpRepo.OrderByCountDesc();
 	} 
 	
 	@PostMapping("/precleanups/add")
 	public Collection<PreCleanUp> addPreCleanUp(@RequestBody String body) throws JSONException {
 		JSONObject newPreCleanUp = new JSONObject(body);
+		LocalDate scheduledDate = LocalDate.parse(newPreCleanUp.getString("preCleanUpScheduledDate"));
 		String location = newPreCleanUp.getString("preCleanUpLocation");
 		String description = newPreCleanUp.getString("preCleanUpDescription");
-		LocalDate scheduledDate = LocalDate.parse(newPreCleanUp.getString("preCleanUpScheduledDate"));
-		preCleanUpRepo.save(new PreCleanUp(scheduledDate, location, description));
+		User user = userRepo.findById(Long.parseLong(newPreCleanUp.getString("preCleanUpUser"))).get();
+		preCleanUpRepo.save(new PreCleanUp(scheduledDate, location, description, user));
 		return (Collection<PreCleanUp>)preCleanUpRepo.OrderByScheduledDateAsc();
 	} 
 	

@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.wecancodeit.finalproject.repositories.PreCleanUpRepository;
+import org.wecancodeit.finalproject.repositories.UserRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @DataJpaTest
@@ -23,11 +24,14 @@ public class PreCleanUpTest {
 
 	@Resource
 	private PreCleanUpRepository preCleanUpRepo;
+	@Resource
+	private UserRepository userRepo;
 
 	@Test
 	public void shouldLoadPreCleanUpByLocation() {
+		User user = userRepo.save(new User("userName", "avatar"));
 		PreCleanUp preCleanUpTest = preCleanUpRepo
-				.save(new PreCleanUp(LocalDate.now(), "location", "description"));
+				.save(new PreCleanUp(LocalDate.now(), "location", "description", user));
 
 		entityManager.persist(preCleanUpTest);
 		entityManager.flush();
