@@ -12,7 +12,6 @@ import Users from '../components/users/Users'
 import User from '../components/users/User'
 import api from '../util/api'
 
-
 class App extends Component {
 
   constructor() {
@@ -77,8 +76,8 @@ class App extends Component {
     )
   }
 
-  addPreCleanUp = (preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate) => {
-    let newPreCleanUp = { preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate }
+  addPreCleanUp = (preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate, preCleanUpUser) => {
+    let newPreCleanUp = { preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate, preCleanUpUser }
     api.postRequest('/cleanups/precleanups/add', newPreCleanUp, preCleanUps =>
           this.setState({ preCleanUps })
     )
