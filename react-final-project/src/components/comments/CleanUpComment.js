@@ -1,4 +1,5 @@
 import React from 'react'
+import './comments.css'
 
 export default (props) => {
     const user = props.cleanUpComment.user
@@ -7,10 +8,10 @@ export default (props) => {
         <div className= "comment-feed-card">
             <div className="comment">
             <div className = "comment__user">
-                <h3 className = "comment__user-userName">{user.userName}</h3>
                 <img className="comment__user-avatar" src = {user.avatar} alt = "User Avatar"/>
+                <h3 className = "comment__user-userName">{user.userName}</h3>
             </div>
-                <p className="comment__content">{props.cleanUpComment.content}</p>
+             <p className="comment__content">{props.cleanUpComment.content}</p>
             </div>
         </div>
     </div>

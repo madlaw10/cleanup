@@ -1,0 +1,21 @@
+.comment__user {
+    align-items: center;
+    display: flex;
+    padding-top: 23px;
+}
+
+.comment__user-userName {
+    padding-left: 10px;
+}
+
+.comment__user-avatar {
+    border-radius: 360px;
+    box-shadow: 1px 1px 5px black;
+    height: 35px;
+    width: 35px;
+}
+
+.comment__content {
+    margin-left: 45px;
+    line-height: 1.4rem;
+}
