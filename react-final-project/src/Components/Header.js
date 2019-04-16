@@ -7,13 +7,13 @@ export default (props) => {
         <div className="header">
 
             <div className="dropdown">
-                <Dropdown updateCurrentLocation={props.updateCurrentLocation} currentLocation={props.currentLocation} getUser = {props.getUser} user = {props.user}/>
+                <Dropdown updateCurrentLocation={props.updateCurrentLocation} currentLocation={props.currentLocation} getPostCleanUps = {props.getPostCleanUps} getPreCleanUps = {props.getPreCleanUps} getUsers = {props.getUsers} getUser = {props.getUser} user = {props.user}/>
             </div>
 
             <div className="nav">
-                <h3 onClick={() => props.updateCurrentLocation('precleanups')} className="nav__item">Cleanups</h3>
+                <h3 onClick={() => props.getPreCleanUps()} className="nav__item">Cleanups</h3>
                 <h3 onClick={() => props.updateCurrentLocation('mapcontainer')} className="nav__item">Map</h3>
-                <h3 onClick={() => props.updateCurrentLocation('postcleanups')} className="nav__item">History</h3>
+                <h3 onClick={() => props.getPostCleanUps()} className="nav__item">History</h3>
             </div>
 
 
@@ -26,8 +26,9 @@ export default (props) => {
 
             {!(props.currentLocation === "landingpage") &&
                 <div className="user__container">
+                    {props.getUser(props.user.userName)}
                     <h3 className="user__points">{props.user.pointCount} <span> pts</span></h3>
-                    <img onClick={() => props.getUser(props.user.userName)} className ="avatar__image" src={props.user.avatar} alt="Your avatar" />
+                    <img onClick={() => props.updateCurrentLocation('user')} className ="avatar__image" src={props.user.avatar} alt="Your avatar" />
                 </div>
             }
 

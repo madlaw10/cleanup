@@ -70,12 +70,15 @@ public class User {
 		return comments;
 	}
 
-	public void increasePointCount() {
-		pointCount++;
+	public void increasePointCount(int increase) {
+		pointCount += increase;
 	}
 	
-	public void decreasePointCount() {
-		pointCount--;
+	public void decreasePointCount(int decrease) {
+		pointCount -= decrease;
+		if (pointCount <= 0) {
+			pointCount = 0;
+		}
 	}
 
 	@Override

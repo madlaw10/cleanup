@@ -29,6 +29,7 @@ class UserLogin extends Component {
         event.preventDefault();
         this.props.getUser(this.state.userName);
         this.setState(this.baseState);
+        this.props.updateCurrentLocation('mapcontainer')
     }
 
     render () {

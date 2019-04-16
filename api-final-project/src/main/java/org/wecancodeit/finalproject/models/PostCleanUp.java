@@ -59,10 +59,9 @@ public class PostCleanUp extends CleanUp {
 	}
 	
 	public void decreaseCount() {
+		count--;
 		if (count <= 0) {
 			count = 0;
-		} else {
-			count--;
 		}
 	}
 
