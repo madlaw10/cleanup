@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.wecancodeit.finalproject.models.Comment;
 import org.wecancodeit.finalproject.repositories.CommentRepository;
+import org.wecancodeit.finalproject.repositories.UserRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @DataJpaTest
@@ -22,11 +23,14 @@ public class CommentTest {
 
 	@Resource
 	private CommentRepository commentRepo;
+	@Resource
+	private UserRepository userRepo;
 
 	@Test
 	public void shouldLoadCommentByContent() {
+		User user = userRepo.save(new User("userName", "avatar"));
 		Comment commentTest = commentRepo
-				.save(new Comment("content"));
+				.save(new Comment("content", user));
 
 		entityManager.persist(commentTest);
 		entityManager.flush();
