@@ -8,7 +8,8 @@ class PreCleanUpForm extends Component {
         this.state = {
             preCleanUpLocation: '',
             preCleanUpDescription: '',
-            preCleanUpScheduledDate: ''
+            preCleanUpScheduledDate: '',
+            preCleanUpUser: props.user.id
         };
 
         this.baseState=this.state;
@@ -29,7 +30,7 @@ class PreCleanUpForm extends Component {
     
     handleSubmit(event) {
         event.preventDefault();
-        this.props.addPreCleanUp(this.state.preCleanUpLocation, this.state.preCleanUpDescription, this.state.preCleanUpScheduledDate);
+        this.props.addPreCleanUp(this.state.preCleanUpLocation, this.state.preCleanUpDescription, this.state.preCleanUpScheduledDate, this.state.preCleanUpUser);
         this.setState(this.baseState);
     }
 

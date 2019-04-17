@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -14,13 +15,16 @@ public class PreCleanUp extends CleanUp {
 	private LocalDate scheduledDate;
 	@Lob
 	private String description;
-	public PreCleanUp () {
-	}
+	@ManyToOne
+	private User user;
 	
-	public PreCleanUp(LocalDate scheduledDate, String location, String description) {
+	public PreCleanUp () {}
+	
+	public PreCleanUp(LocalDate scheduledDate, String location, String description, User user) {
 		super(location);
 		this.scheduledDate = scheduledDate;
 		this.description = description;
+		this.user = user;
 	}
 
 	public LocalDate getScheduledDate() {
@@ -31,10 +35,14 @@ public class PreCleanUp extends CleanUp {
 		return description;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
 	@Override
 	public String toString() {
-		return "id=" + this.getId() + ", scheduledDate=" + scheduledDate + ", location=" + this.getLocation() + ", description="
-				+ description + ", comments=" + this.getComments();
+		return "scheduledDate=" + scheduledDate + ", description=" + description + ", user=" + user + ", getId()="
+				+ getId() + ", getLocation()=" + getLocation() + ", getComments()=" + getComments();
 	}
 	
 }

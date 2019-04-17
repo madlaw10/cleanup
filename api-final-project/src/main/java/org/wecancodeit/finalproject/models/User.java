@@ -21,6 +21,9 @@ public class User {
 	@OneToMany(mappedBy="user")
 	@JsonIgnore
 	private Collection <PostCleanUp> postCleanUps;
+	@OneToMany(mappedBy="user")
+	@JsonIgnore
+	private Collection <PreCleanUp> preCleanUps;
 	@OneToMany(mappedBy= "user")
 	@JsonIgnore
 	private Collection <Comment> comments;
@@ -34,6 +37,8 @@ public class User {
 		this.avatar = avatar;
 		this.userName = userName;
 		this.postCleanUps = new ArrayList<PostCleanUp>();
+		this.preCleanUps = new ArrayList<PreCleanUp>();
+		this.comments = new ArrayList<Comment>();
 	}
 
 	public Long getId() {
@@ -57,22 +62,29 @@ public class User {
 		return postCleanUps;
 	}
 	
+	public Collection<PreCleanUp> getPreCleanUps() {
+		return preCleanUps;
+	}
+
 	public Collection<Comment> getComments() {
 		return comments;
 	}
 
-	public void increasePointCount() {
-		pointCount++;
+	public void increasePointCount(int increase) {
+		pointCount += increase;
 	}
 	
-	public void decreasePointCount() {
-		pointCount--;
+	public void decreasePointCount(int decrease) {
+		pointCount -= decrease;
+		if (pointCount <= 0) {
+			pointCount = 0;
+		}
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", avatar=" + avatar + ", pointCount=" + pointCount
-				+ ", postCleanUps=" + postCleanUps + ", comments=" + comments + "]";
+		return "id=" + id + ", userName=" + userName + ", avatar=" + avatar + ", pointCount=" + pointCount
+				+ ", postCleanUps=" + postCleanUps + ", preCleanUps=" + preCleanUps + ", comments=" + comments;
 	}
 	
 	

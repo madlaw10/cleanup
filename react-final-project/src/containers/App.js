@@ -12,7 +12,6 @@ import Users from '../components/users/Users'
 import User from '../components/users/User'
 import api from '../util/api'
 
-
 class App extends Component {
 
   constructor() {
@@ -28,15 +27,11 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.getPostCleanUps()
-    this.getPreCleanUps()
-    this.getUsers()
-  }
+  componentDidMount() {}
 
   getPostCleanUps = () => {
     api.getRequest('/cleanups/postcleanups', postCleanUps => {
-      this.setState({ postCleanUps })
+      this.setState({ postCleanUps, currentLocation: 'postcleanups' })
     })
   }
 
@@ -48,7 +43,7 @@ class App extends Component {
 
   getPreCleanUps = () => {
     api.getRequest('/cleanups/precleanups', preCleanUps => {
-      this.setState({ preCleanUps })
+      this.setState({ preCleanUps, currentLocation: 'precleanups' })
     })
   }
 
@@ -60,50 +55,52 @@ class App extends Component {
 
   getUsers = () => {
     api.getRequest('/users/leaderboard', users => {
-      this.setState({ users })
+      this.setState({ users, currentLocation: 'users' })
     })
   }
 
   getUser = (userName) => {
     api.getRequest('/users/' + userName, user => {
-      this.setState({ user, currentLocation: 'user' })
+      this.setState({ user })
     })
   }
 
   addPostCleanUp = (postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption, postCleanUpUser) => {
     let newPostCleanUp = { postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption, postCleanUpUser }
     api.postRequest('/cleanups/postcleanups/add', newPostCleanUp, postCleanUps =>
-          this.setState({ postCleanUps })
+          this.setState({ postCleanUps, currentLocation: 'postcleanups' })
     )
   }
 
-  addPreCleanUp = (preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate) => {
-    let newPreCleanUp = { preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate }
+  addPreCleanUp = (preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate, preCleanUpUser) => {
+    let newPreCleanUp = { preCleanUpLocation, preCleanUpDescription, preCleanUpScheduledDate, preCleanUpUser }
     api.postRequest('/cleanups/precleanups/add', newPreCleanUp, preCleanUps =>
-          this.setState({ preCleanUps })
+          this.setState({ preCleanUps, currentLocation: 'precleanups' })
     )
   }
 
   addPostCleanUpComment = (cleanUpCommentContent, cleanUpId, cleanUpCommentUser) => {
     let newCleanUpComment = {cleanUpCommentContent, cleanUpId, cleanUpCommentUser }
     api.postRequest('/comments/add/postcleanupcomment', newCleanUpComment, postCleanUp => 
-      this.setState({ postCleanUp })
+      this.setState({ postCleanUp, currentLocation: 'postcleanup' })
     )
   }
 
   addPreCleanUpComment = (cleanUpCommentContent, cleanUpId, cleanUpCommentUser) => {
     let newCleanUpComment = {cleanUpCommentContent, cleanUpId, cleanUpCommentUser }
     api.postRequest('/comments/add/precleanupcomment', newCleanUpComment, preCleanUp => 
-      this.setState({ preCleanUp })
+      this.setState({ preCleanUp, currentLocation: 'precleanup'  })
     )
   }
 
-  voteUp = (postCleanUpId) => {
-    api.postRequest('/cleanups/postcleanups/' + postCleanUpId + '/voteup', postCleanUpId, postCleanUps => this.setState({ postCleanUps }))
+  voteUp = (postCleanUpId, cleanUpUserId) => {
+    let postCleanUpUser = { cleanUpUserId }
+    api.postRequest('/cleanups/postcleanups/' + postCleanUpId + '/voteup', postCleanUpUser, postCleanUps => this.setState({ postCleanUps, currentLocation: 'postcleanups' }))
   }
 
-  voteDown = (postCleanUpId) => {
-    api.postRequest('/cleanups/postcleanups/' + postCleanUpId + '/votedown', postCleanUpId, postCleanUps => this.setState({ postCleanUps }))
+  voteDown = (postCleanUpId, cleanUpUserId) => {
+    let postCleanUpUser = { cleanUpUserId }
+    api.postRequest('/cleanups/postcleanups/' + postCleanUpId + '/votedown', postCleanUpUser, postCleanUps => this.setState({ postCleanUps, currentLocation: 'postcleanups' }))
   }
 
   updateCurrentLocation = (location) => {
@@ -114,7 +111,8 @@ class App extends Component {
     return (
 
       <div className="body__main">
-        <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getUser = {this.getUser} />
+
+        <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getPostCleanUps = {this.getPostCleanUps} getPreCleanUps = {this.getPreCleanUps} getUsers = {this.getUsers} getUser = {this.getUser} />
 
         <Footer updateCurrentLocation={this.updateCurrentLocation} />
         {this.state.currentLocation === "mapcontainer" && <MapContainer />}
@@ -136,7 +134,7 @@ class App extends Component {
 
         </div>
 
-          {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} />}
+          {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} updateCurrentLocation = {this.updateCurrentLocation} />}
 
       </div>
     )
