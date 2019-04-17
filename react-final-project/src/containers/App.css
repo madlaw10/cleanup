@@ -23,7 +23,7 @@ body {
 }
 
 .body__main {
-    background-image: url("https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/background.png");
+    background-image: url("../media/heroimage.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

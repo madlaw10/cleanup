@@ -1,5 +1,5 @@
 .map-view {
-    height: 89%;
+    height: 81.5%;
     width: 100%;
     position: fixed;
     margin-top: -5px;
@@ -7,4 +7,10 @@
 
 .map-container {
     padding-top: 85px;
+}
+
+@media only screen and (min-width: 700px) {
+    .map-view {
+        height: 89.2%;
+    }
 }
