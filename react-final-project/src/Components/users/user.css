@@ -1,6 +1,7 @@
 .login__logo {
     height: auto;
     width: 200px;
+    padding-top: 40px; 
 }
 
 .landing-page {
@@ -21,6 +22,7 @@
     box-shadow: 2px 2px 5px black;
     margin-top: 20px;
     padding: 10px 20px 20px 20px;
+    height: 80%;
 }
 
 .user__userName {
@@ -32,6 +34,7 @@
 
 .user__avatar {
     box-shadow: 1px 1px 5px black;
+    border-radius: 360px;
     height: auto;
     width: 100%;
 }

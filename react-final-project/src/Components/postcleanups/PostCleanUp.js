@@ -5,12 +5,13 @@ export default (props) => {
     const postCleanUpId = props.postCleanUp.id
     const cleanUpComments = props.postCleanUp.comments
     const cleanUpUser = props.postCleanUp.user
+
     return (
         <div className="postCleanUp-feed">
             <div className="postCleanUp-feed-card">
                 <div className="postCleanUp">
                     <div className="postCleanUp__header">
-                        <img className="postCleanUp__avatar" src="https://farm2.staticflickr.com/1723/42703297172_fd3e3933d6.jpg" alt="Avatar" />
+                        <img className="postCleanUp__avatar" src={cleanUpUser.avatar} alt="Avatar" />
                         <h3 className="postCleanUp__location">{props.postCleanUp.location} {props.postCleanUp.id}</h3>
                     </div>
                     <img className="postCleanUp__image" src={props.postCleanUp.image} alt="CleanUp" />
