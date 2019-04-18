@@ -65,6 +65,13 @@ class App extends Component {
     })
   }
 
+  addNewUser = (userName, avatar) =>{
+    let newUser = {userName, avatar}
+    api.postRequest('/users/add', newUser, user => {
+      this.setState({ user }) 
+    })
+  }
+
   addPostCleanUp = (postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption, postCleanUpUser) => {
     let newPostCleanUp = { postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption, postCleanUpUser }
     api.postRequest('/cleanups/postcleanups/add', newPostCleanUp, postCleanUps =>
@@ -134,7 +141,7 @@ class App extends Component {
 
         </div>
 
-          {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} updateCurrentLocation = {this.updateCurrentLocation} />}
+          {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} updateCurrentLocation = {this.updateCurrentLocation} addNewUser = {this.addNewUser} />}
 
       </div>
     )
