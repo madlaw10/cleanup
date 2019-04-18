@@ -66,6 +66,13 @@ class App extends Component {
     })
   }
 
+  addNewUser = (userName, avatar) =>{
+    let newUser = {userName, avatar}
+    api.postRequest('/users/add', newUser, user => {
+      this.setState({ user, currentLocation: 'user' }) 
+    })
+  }
+
   addPostCleanUp = (postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption, postCleanUpUser) => {
     let newPostCleanUp = { postCleanUpPhoto, postCleanUpLocation, postCleanUpCaption, postCleanUpUser }
     api.postRequest('/cleanups/postcleanups/add', newPostCleanUp, postCleanUps =>
@@ -110,8 +117,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>          
+      <div> 
+
       {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} updateCurrentLocation = {this.updateCurrentLocation} />}
+
       {this.state.currentLocation === 'newuserform' && <NewUserForm addNewUser = {this.addNewUser} />}
 
       <div className="body__main">
