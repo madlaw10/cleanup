@@ -34,9 +34,6 @@ class UserLogin extends Component {
 
     render () {
         return (
-            <div className="userLogin__form">
-                <h2>Log in</h2>
-                <h6>No account?  <a href="">Register</a></h6>
                 <form className="userLogin" onSubmit={this.handleSubmit}>
                     <label htmlFor="userName-input" className="form__label">
                         Username:
@@ -66,7 +63,6 @@ class UserLogin extends Component {
                         className="userLogin__btn"
                         type="submit" value="Login" />
                 </form>
-            </div>
         )
     }
 }
