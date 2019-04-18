@@ -117,15 +117,17 @@ class App extends Component {
 
   render() {
     return (
-
+      <div>          
+      {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} updateCurrentLocation = {this.updateCurrentLocation} />}
       <div className="body__main">
 
-        <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getPostCleanUps = {this.getPostCleanUps} getPreCleanUps = {this.getPreCleanUps} getUsers = {this.getUsers} getUser = {this.getUser} />
+        {this.state.currentLocation !== "landingpage" && <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getPostCleanUps = {this.getPostCleanUps} getPreCleanUps = {this.getPreCleanUps} getUsers = {this.getUsers} getUser = {this.getUser} />}
 
-        <Footer updateCurrentLocation={this.updateCurrentLocation} />
+        {this.state.currentLocation !== "landingpage" && <Footer updateCurrentLocation={this.updateCurrentLocation} />}
         {this.state.currentLocation === "mapcontainer" && <MapContainer />}
 
-        <div className="body__container">
+        
+        {this.state.currentLocation !== "landingpage" && <div className="body__container">
 
           {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} voteUp = {this.voteUp} voteDown = {this.voteDown}  user = {this.state.user} updateCurrentLocation = {this.updateCurrentLocation}/>}
 
@@ -139,13 +141,13 @@ class App extends Component {
 
           {this.state.currentLocation === "user" && <User user={this.state.user} currentLocation={this.state.currentLocation} />}
 
+        </div>}
 
-        </div>
-
-          {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} updateCurrentLocation = {this.updateCurrentLocation} addNewUser = {this.addNewUser} />}
 
           {this.state.currentLocation === 'newuserform' && <NewUserForm addNewUser = {this.addNewUser}/> }
 
+
+      </div>
       </div>
     )
   }
