@@ -10,9 +10,9 @@ export default (props) => {
         <div className="userLogin__form">
         
             <h2>Log in</h2>
-            <h6>No account?  <span onClick={()=>props.updateCurrentLocation('newuserform')}>Register</span></h6>
-
-            <UserLogin getUser = {props.getUser} updateCurrentLocation = {props.updateCurrentLocation} currentLocation={props.currentLocation} />
+            <h6>No account?  <span className="register" onClick={()=>props.updateCurrentLocation('newuserform')}>Register</span></h6>
+            
+              <UserLogin getUser = {props.getUser} updateCurrentLocation = {props.updateCurrentLocation} currentLocation={props.currentLocation} addNewUser = {props.addNewUser}/>
             
        </div>
     </div>

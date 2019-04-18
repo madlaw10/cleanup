@@ -35,10 +35,9 @@ class NewUserForm extends Component {
 
     render() {
         return (
-            <div className="tab">
-                <input id="tab-one" className="toggle__checkbox" type="checkbox" name="tabs" />
-                <label htmlFor="tab-one" className="newUserForm__toggle">Register New Account</label>
-                <div className="tab-content">
+            <div className="newuser">
+             <img className="newuser__logo" src="https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/cleanuplogo2.png" />
+                <div className="newuser-content">
                     <form className="newUserForm" onSubmit={this.handleSubmit}>
                         <label htmlFor="location-input" className="form__label">
                             Username:</label>

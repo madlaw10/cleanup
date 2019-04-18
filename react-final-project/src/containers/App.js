@@ -123,11 +123,11 @@ class App extends Component {
 
       {this.state.currentLocation === 'newuserform' && <NewUserForm addNewUser = {this.addNewUser} />}
 
-      <div className="body__main">
+      {this.state.currentLocation !== "newuserform" && <div className="body__main">
 
-        {this.state.currentLocation !== "landingpage" && <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getPostCleanUps = {this.getPostCleanUps} getPreCleanUps = {this.getPreCleanUps} getUsers = {this.getUsers} getUser = {this.getUser} />}
+        {this.state.currentLocation !== "landingpage" && "newuserform" && <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getPostCleanUps = {this.getPostCleanUps} getPreCleanUps = {this.getPreCleanUps} getUsers = {this.getUsers} getUser = {this.getUser} />}
 
-        {this.state.currentLocation !== "landingpage" && <Footer updateCurrentLocation={this.updateCurrentLocation} />}
+        {this.state.currentLocation !== "landingpage" && "newuserform" && <Footer updateCurrentLocation={this.updateCurrentLocation} />}
 
         {this.state.currentLocation === "mapcontainer" && <MapContainer />}
 
@@ -147,7 +147,8 @@ class App extends Component {
 
           </div>}
 
-        </div>
+        </div>}
+        
       </div>
     )
   }
