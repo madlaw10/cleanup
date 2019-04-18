@@ -10,6 +10,7 @@ import PreCleanUps from '../components/precleanups/PreCleanUps'
 import PreCleanUp from '../components/precleanups/PreCleanUp'
 import Users from '../components/users/Users'
 import User from '../components/users/User'
+import NewUserForm from '../components/users/NewUserForm'
 import api from '../util/api'
 
 class App extends Component {
@@ -142,6 +143,8 @@ class App extends Component {
         </div>
 
           {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} updateCurrentLocation = {this.updateCurrentLocation} addNewUser = {this.addNewUser} />}
+
+          {this.state.currentLocation === 'newuserform' && <NewUserForm addNewUser = {this.addNewUser}/> }
 
       </div>
     )
