@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleApiWrapper, Map, Marker, InfoWindow } from 'google-maps-react';
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 import '../css/map.css'
 
 const MarkersList = props => {
@@ -63,8 +63,6 @@ class MapContainer extends React.Component {
           position = {{ lat: 39.9611, lng: -82.9987 }}
           icon="https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/cleanup__map-marker.png"
           />
-
-
           </Map>
         </div>
       </div>

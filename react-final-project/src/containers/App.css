@@ -22,14 +22,6 @@ body {
     margin: 0px 0px 40px 0px;
 }
 
-.body__main {
-    background-image: url("../media/heroimage.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: visible;
-}
 
 @media only screen and (min-width: 700px) {
     .body__container {
