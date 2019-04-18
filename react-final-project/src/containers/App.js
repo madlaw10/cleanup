@@ -62,7 +62,14 @@ class App extends Component {
 
   getUser = (userName) => {
     api.getRequest('/users/' + userName, user => {
-      this.setState({ user })
+      this.setState({ user, currentLocation: 'user' })
+    })
+  }
+
+  addNewUser = (userName, avatar) =>{
+    let newUser = {userName, avatar}
+    api.postRequest('/users/add', newUser, user => {
+      this.setState({ user, currentLocation: 'user' }) 
     })
   }
 
@@ -110,8 +117,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>          
+      <div> 
+
       {this.state.currentLocation === "landingpage" && <LandingPage getUser = {this.getUser} currentLocation={this.state.currentLocation} updateCurrentLocation = {this.updateCurrentLocation} />}
+
       {this.state.currentLocation === 'newuserform' && <NewUserForm addNewUser = {this.addNewUser} />}
 
       {this.state.currentLocation !== "newuserform" && <div className="body__main">
@@ -119,9 +128,9 @@ class App extends Component {
         {this.state.currentLocation !== "landingpage" && "newuserform" && <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getPostCleanUps = {this.getPostCleanUps} getPreCleanUps = {this.getPreCleanUps} getUsers = {this.getUsers} getUser = {this.getUser} />}
 
         {this.state.currentLocation !== "landingpage" && "newuserform" && <Footer updateCurrentLocation={this.updateCurrentLocation} />}
+
         {this.state.currentLocation === "mapcontainer" && <MapContainer />}
 
-        
         {this.state.currentLocation !== "landingpage" && <div className="body__container">
 
           {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} voteUp = {this.voteUp} voteDown = {this.voteDown}  user = {this.state.user} updateCurrentLocation = {this.updateCurrentLocation}/>}
@@ -138,8 +147,8 @@ class App extends Component {
 
           </div>}
 
-
         </div>}
+
       </div>
     )
   }

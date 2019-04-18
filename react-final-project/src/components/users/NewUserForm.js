@@ -55,7 +55,7 @@ class NewUserForm extends Component {
                             className="newUserForm__password"
                             name="password"
                             id="password-input"
-                            type="text"
+                            type="password"
                             placeholder="Create a password"
                             value={this.state.password}
                             onChange={this.handleInputChange} />
