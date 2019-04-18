@@ -5,11 +5,17 @@
 
 .landing-page {
     align-items: center;
+    background-image: url("../../media/heroimage.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    padding-bottom: 50%;
+    height: 100vh;
+    padding-top: 80px;
 }
+
 
 .users-leaderboard {
     padding: 5px;

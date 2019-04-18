@@ -33,7 +33,6 @@ const DDToggler = (props) => {
 const DDList = (props) => {
   return (<div className = {props.opened ? 'opened' : 'closed'}>
         <div className="menu__items">
-
             <h3 onClick={() => props.updateCurrentLocation('user')} className="menu__item">Profile</h3>
             <h3 onClick={() => props.getPreCleanUps()} className="menu__item">Cleanups</h3>
             <h3 onClick={() => props.updateCurrentLocation('mapcontainer')}className="menu__item">Map</h3>
