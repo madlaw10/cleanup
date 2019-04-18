@@ -26,9 +26,8 @@ export default (props) => {
 
             {!(props.currentLocation === "landingpage") &&
                 <div className="user__container">
-                    {props.getUser(props.user.userName)}
                     <h3 className="user__points">{props.user.pointCount} <span> pts</span></h3>
-                    <img onClick={() => props.updateCurrentLocation('user')} className ="avatar__image" src={props.user.avatar} alt="Your avatar" />
+                    <img onClick={() => props.getUser(props.user.userName)} className ="avatar__image" src={props.user.avatar} alt="Your avatar" />
                 </div>
             }
 

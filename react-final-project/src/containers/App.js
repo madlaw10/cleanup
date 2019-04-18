@@ -62,7 +62,7 @@ class App extends Component {
 
   getUser = (userName) => {
     api.getRequest('/users/' + userName, user => {
-      this.setState({ user })
+      this.setState({ user, currentLocation: 'user' })
     })
   }
 
@@ -128,9 +128,9 @@ class App extends Component {
         {this.state.currentLocation !== "landingpage" && <Header updateCurrentLocation={this.updateCurrentLocation} currentLocation={this.state.currentLocation} user = {this.state.user} getPostCleanUps = {this.getPostCleanUps} getPreCleanUps = {this.getPreCleanUps} getUsers = {this.getUsers} getUser = {this.getUser} />}
 
         {this.state.currentLocation !== "landingpage" && <Footer updateCurrentLocation={this.updateCurrentLocation} />}
+
         {this.state.currentLocation === "mapcontainer" && <MapContainer />}
 
-        
         {this.state.currentLocation !== "landingpage" && <div className="body__container">
 
           {this.state.currentLocation === "postcleanups" && <PostCleanUps postCleanUps={this.state.postCleanUps} getPostCleanUp={this.getPostCleanUp} currentLocation={this.state.currentLocation} addPostCleanUp={this.addPostCleanUp} addPostCleanUpComment = {this.addPostCleanUpComment} voteUp = {this.voteUp} voteDown = {this.voteDown}  user = {this.state.user} updateCurrentLocation = {this.updateCurrentLocation}/>}
@@ -146,7 +146,6 @@ class App extends Component {
           {this.state.currentLocation === "user" && <User user={this.state.user} currentLocation={this.state.currentLocation} />}
 
           </div>}
-
 
         </div>
       </div>
