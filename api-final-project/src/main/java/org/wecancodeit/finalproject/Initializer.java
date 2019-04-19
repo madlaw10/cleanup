@@ -48,7 +48,7 @@ public class Initializer implements CommandLineRunner{
 		PostCleanUp cleanUpOne = postCleanUpRepo.save(new PostCleanUp("https://static.boredpanda.com/blog/wp-content/uploads/2019/03/trashtag-challenge-people-clean-surroundings-108-5c8659a6653f5__700.jpg", "Riverside Park", "Riverside clean up when well with great friends!", userOne));
 		PostCleanUp cleanUpTwo = postCleanUpRepo.save(new PostCleanUp("https://media.globalcitizen.org/thumbnails/e4/15/e415fee3-e28a-4d6d-9ce1-ba303d3d5dab/screen_shot_2019-03-11_at_53455_pm.png__1500x670_q85_crop_subsampling-2.png", "Miami Beach", "Beaches look better without trash.", userTwo));
 		PostCleanUp cleanUpThree = postCleanUpRepo.save(new PostCleanUp("https://static.boredpanda.com/blog/wp-content/uploads/2019/03/trashtag-challenge-people-clean-surroundings-104-5c865855c801d__700.jpg", "Lake Erie", "Cleaned up the beach this weekend.", userThree));
-		PostCleanUp cleanUpFour = postCleanUpRepo.save(new PostCleanUp("https://static.boredpanda.com/blog/wp-content/uploads/2019/03/xji67arzwbl21-5c86559301cbe__700.jpg", "Manila Bay", " January 27 CleanUp at Manila Bay.", userFour));
+		PostCleanUp cleanUpFour = postCleanUpRepo.save(new PostCleanUp("https://static.boredpanda.com/blog/wp-content/uploads/2019/03/xji67arzwbl21-5c86559301cbe__700.jpg", "Manila Bay", "CleanUp at Manila Bay.", userFour));
 		PostCleanUp cleanUpFive = postCleanUpRepo.save(new PostCleanUp("https://static.boredpanda.com/blog/wp-content/uploads/2019/03/trashtag-challenge-people-clean-surroundings-102-5c8657638ca49__700.jpg", "Potomac River", "Cleaned up DC a bit.", userFive));
 
 
