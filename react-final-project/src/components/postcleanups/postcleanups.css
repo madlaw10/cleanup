@@ -12,14 +12,19 @@
 .postCleanUp-feed-card {
     background-color: white;
     box-shadow: 2px 2px 5px black;
-    padding: 10px 20px 20px 20px;
+    padding: 20px;
+}
+
+.postCleanUp__heading {
+    align-items: center;
+    display: flex;
 }
 
 .postCleanUp__header {
     align-items: center;
     display: flex;
-    padding: 10px 10px 10px 5px;
-    margin-bottom: 10px;
+    justify-content: space-between;
+    padding: 0px 0px 20px 0px;
 }
 
 .postCleanUp__image {
@@ -38,7 +43,7 @@
 .postCleanUp__location {
     font-size: 20px;
     font-weight: bolder;
-    padding: 10px;
+    padding: 0px 0px 0px 10px;
     text-align: center;
 }
 

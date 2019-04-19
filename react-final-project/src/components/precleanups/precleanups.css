@@ -1,3 +1,10 @@
+.preCleanUp__avatar {
+    border-radius: 360px;
+    box-shadow: 1px 1px 5px black;
+    height: 35px;
+    width: 35px;
+}
+
 .preCleanUp-feed {
     padding: 5px;
     position:relative;
@@ -12,11 +19,17 @@
     margin-bottom: 10px;
 }
 
+.preCleanUp__heading {
+    align-items: center;
+    display: flex;
+}
+
 .preCleanUp__header {
     align-items: center;
     border-bottom: 1px solid gray;
     display: flex;
-    padding: 30px;
+    justify-content: space-between;
+    padding: 0px 0px 20px 0px;
 }
 
 .preCleanUp__image {
@@ -25,9 +38,9 @@
 }
 
 .preCleanUp__location {
-    font-size: 40px;
+    font-size: 20px;
     font-weight: bolder;
-    padding: 10px;
+    padding: 0px 0px 0px 10px;
     text-align: center;
 }
 
@@ -80,6 +93,7 @@
     padding-left: 1%;
     padding-right: 1%;
 }
+
 
 /* Accordion CSS START */
 

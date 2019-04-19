@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
-import '../../css/map.css'
+import './map.css'
 
 const MarkersList = props => {
   const { locations, ...markerProps } = props;
@@ -39,7 +39,6 @@ class MapContainer extends React.Component {
   render() {
     return (
       <div className="map-view">
-        <div className="map-container">
           <Map
             google={this.props.google}
             className={"map"}
@@ -64,7 +63,6 @@ class MapContainer extends React.Component {
           icon="https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/cleanup__map-marker.png"
           />
           </Map>
-        </div>
       </div>
     );
   }

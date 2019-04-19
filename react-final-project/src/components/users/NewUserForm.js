@@ -46,6 +46,7 @@ class NewUserForm extends Component {
                             name="userName"
                             id="userName-input"
                             type="text"
+                            maxlength="20"
                             placeholder="Create a username"
                             value={this.state.userName}
                             onChange={this.handleInputChange} />
