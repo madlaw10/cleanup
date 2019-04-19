@@ -1,6 +1,6 @@
 import React from 'react'
-import Dropdown from '../components/dropdown/Dropdown';
-import '../css/header.css';
+import Dropdown from '../dropdown/Dropdown';
+import './header.css';
 
 export default (props) => {
     return (

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from '../components/Header';
+import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
-import LandingPage from '../components/LandingPage'
-import MapContainer from '../components/MapContainer'
+import LandingPage from '../components/landingpage/LandingPage'
+import MapContainer from '../components/map/MapContainer'
 import PostCleanUps from '../components/postcleanups/PostCleanUps'
 import PostCleanUp from '../components/postcleanups/PostCleanUp'
 import PreCleanUps from '../components/precleanups/PreCleanUps'

@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
-import '../css/map.css'
+import '../../css/map.css'
 
 const MarkersList = props => {
   const { locations, ...markerProps } = props;

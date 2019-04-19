@@ -12,7 +12,7 @@ export default (props) => {
                 <div className="postCleanUp">
                     <div className="postCleanUp__header">
                         <img className="postCleanUp__avatar" src={cleanUpUser.avatar} alt="Avatar" />
-                        <h3 className="postCleanUp__location">{props.postCleanUp.location} {props.postCleanUp.id}</h3>
+                        <h3 className="postCleanUp__location">{props.postCleanUp.location}</h3>
                     </div>
                     <img className="postCleanUp__image" src={props.postCleanUp.image} alt="CleanUp" />
                     <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
