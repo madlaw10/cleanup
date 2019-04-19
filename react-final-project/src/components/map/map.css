@@ -1,0 +1,15 @@
+
+.map-view {
+    padding: 85px 0px 0px 0px;
+}
+
+.map {
+    height: 81vh !important;
+}
+
+
+@media only screen and (min-width: 700px) {
+    .map {
+        height: 88.7vh !important;
+    }
+}

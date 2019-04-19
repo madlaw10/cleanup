@@ -11,8 +11,11 @@ export default (props) => {
             <div className="postCleanUp-feed-card">
                 <div className="postCleanUp">
                     <div className="postCleanUp__header">
-                        <img className="postCleanUp__avatar" src={cleanUpUser.avatar} alt="Avatar" />
-                        <h3 className="postCleanUp__location">{props.postCleanUp.location}</h3>
+                        <div className="postCleanUp__heading">
+                            <img className="postCleanUp__avatar" src={cleanUpUser.avatar} alt="Avatar" />
+                            <h3 className="postCleanUp__location">{props.postCleanUp.location}</h3>
+                        </div>
+                            <h4 className="preCleanUp__scheduledDate"> Post Date: {props.postCleanUp.postDate}</h4>
                     </div>
                     <img className="postCleanUp__image" src={props.postCleanUp.image} alt="CleanUp" />
                     <p className="postCleanUp__caption">{props.postCleanUp.caption}</p>
