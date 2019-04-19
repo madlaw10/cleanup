@@ -1,6 +1,6 @@
 package org.wecancodeit.finalproject.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 public class PostCleanUp extends CleanUp {
 
 
-	private LocalDateTime postDate;
+	private LocalDate postDate;
 	// Q: Uploading and supporting local photo files
 	// Collection of images?
 	@Lob
@@ -26,14 +26,14 @@ public class PostCleanUp extends CleanUp {
 
 	public PostCleanUp(String image, String location, String caption, User user) {
 		super(location);
-		this.postDate = LocalDateTime.now();
+		this.postDate = LocalDate.now();
 		this.image = image;
 		this.caption = caption;
 		this.count = 1;
 		this.user = user;
 	}
 
-	public LocalDateTime getPostDate() {
+	public LocalDate getPostDate() {
 		return postDate;
 	}
 
