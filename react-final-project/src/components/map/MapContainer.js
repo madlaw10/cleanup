@@ -83,8 +83,8 @@ class MapContainer extends React.Component {
           {/* Clinton-Como Park */}
           <Marker
           onClick={this.onMarkerClick}
-          name={'Clinton-Como Park'}
-          details={'Lorem ipsum dolor sit amet'}
+          name={"Clinton-Como Park"}
+          details={"Planning a quick afternoon Cleanup, head over to help out if you can! We'll be grabbing some margaritas at the nearby Condados afterwards!"}
           url={"https://goo.gl/maps/jgCWspqJYwWDnf577"}
           position = {{ lat:  40.026087, lng: -83.0224795 }}
           icon="https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/cleanup__map-marker.png"
@@ -94,7 +94,7 @@ class MapContainer extends React.Component {
           <Marker
           onClick={this.onMarkerClick}
           name={'Tuttle Community Recreation Center'}
-          details={'Lorem ipsum dolor sit amet'}
+          details={"Columbus Recreation and Parks is looking for volunteers this weekend to help with various maintenance needs around the center. Center opens at 9am; coffee and donuts will be provided! Volunteers should park in the main lot."}
           url={"https://goo.gl/maps/3nv8ZPQK2sPbKejJA"}
           position = {{ lat: 40.009899, lng: -83.016361 }}   
           icon="https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/cleanup__map-marker.png"
@@ -103,8 +103,8 @@ class MapContainer extends React.Component {
           {/* Glen Echo Park */}
           <Marker
           onClick={this.onMarkerClick}
-          name={' Glen Echo Park '}
-          details={'Lorem ipsum dolor sit amet'}
+          name={"Glen Echo Park"}
+          details={"Noticed lots of trash here while walking my pup the other day. It looks like the recent rain raised stream levels high enough to deposit trash around the banks. It's going to take a whole afternoon to clear out, would love to get some help from the neighborhood!"}
           url={"https://goo.gl/maps/EMKeNg8j3zeV7Te48"}
           position = {{ lat: 40.019343, lng: -82.998632 }}
           icon="https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/cleanup__map-marker.png"
@@ -115,7 +115,7 @@ class MapContainer extends React.Component {
           <Marker
           onClick={this.onMarkerClick}
           name={' Portal Park '}
-          details={'Lorem ipsum dolor sit amet'}
+          details={"Planning to go during my lunch break tomorrow and tidy up the sitting area right by Sahara Cafe. If you're in the area around noon, please feel free to stop by!"}
           url={"https://goo.gl/maps/G91ajUPfRuSnZMq79"}
           position = {{ lat: 40.018145, lng: -83.011651 }}
           icon="https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/cleanup__map-marker.png"
@@ -124,8 +124,8 @@ class MapContainer extends React.Component {
           {/* Audobon Park */}
           <Marker
           onClick={this.onMarkerClick}
-          name={' Audobon Park '}
-          details={'Lorem ipsum dolor sit amet'}
+          name={"Audobon Park"}
+          details={"Thanks to everyone for coming out yesterday. We managed to fill six trashbags in just a few hours! I feel like this park is constanlty in need of a quick pick-up, seems like a good idea to plan on coming back every couple weeks."}
           url={"https://goo.gl/maps/XHobeB6YQw6W9SFT7"}
           position = {{ lat: 40.021056, lng: -82.991674 }}
           icon="https://raw.githubusercontent.com/madlaw10/final-project/master/react-final-project/src/media/cleanup__map-marker.png"
