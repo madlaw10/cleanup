@@ -28,7 +28,9 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
 
   getPostCleanUps = () => {
     api.getRequest('/cleanups/postcleanups', postCleanUps => {
